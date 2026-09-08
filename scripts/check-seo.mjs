@@ -47,7 +47,7 @@ const assertions = [
   [home.includes('6,000') && home.includes('2007') && home.includes('HACCP'), 'home must show original profile milestones'],
   [srHome.includes('6,000') && srHome.includes('Francuske') && srHome.includes('Austrije') && srHome.includes('Grčke'), 'Serbian export section must use the original profile markets'],
 
-  [home.includes('Frozen Fruit') && home.includes('Jams &amp; Fruit Spreads') && home.includes('Fruit Purées'), 'homepage must lead with the original production-program product categories'],
+  [home.includes('Frozen Fruit') && home.includes('Jams & Fruit Spreads') && home.includes('Fruit Purées'), 'homepage must lead with the original production-program product categories'],
   [products.includes('Frozen Fruit') && products.includes('Thermostable Mass') && products.includes('Fruit Yogurt Ingredients') && products.includes('Fruit Fillings'), 'catalogue must retain the original six main product groups'],
   [srProducts.includes('Smrznuto voće') && srProducts.includes('Termostabilna masa') && srProducts.includes('Sastojci za voćni jogurt') && srProducts.includes('Voćna punjenja'), 'Serbian catalogue must match the original production program'],
   [srProducts.includes('višnju') && srProducts.includes('šljivu') && !srProducts.includes('Trešnja'), 'Serbian frozen-fruit copy must use višnja and šljiva'],
