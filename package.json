@@ -6,7 +6,8 @@
   "scripts": {
     "build:config": "node scripts/build-config.mjs",
     "build:css": "tailwindcss -i ./src/input.css -o ./assets/tailwind.css --minify",
-    "build": "npm run build:config && npm run build:css",
+    "build:deploy": "node scripts/prepare-deploy.mjs",
+    "build": "npm run build:config && npm run build:css && npm run build:deploy",
     "check": "node scripts/check.mjs"
   },
   "devDependencies": {
