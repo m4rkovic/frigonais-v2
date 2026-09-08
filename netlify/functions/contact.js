@@ -30,10 +30,23 @@ function safeHtml(value) {
     .replace(/'/g, '&#039;');
 }
 
-function clientIp(req) {
-  const forwarded = req.headers['x-forwarded-for'];
-  if (typeof forwarded === 'string' && forwarded) return forwarded.split(',')[0].trim();
-  return req.headers['x-real-ip'] || req.socket?.remoteAddress || 'unknown';
+function json(statusCode, payload, extraHeaders = {}) {
+  return {
+    statusCode,
+    headers: {
+      'Content-Type': 'application/json; charset=utf-8',
+      'Cache-Control': 'no-store',
+      ...extraHeaders
+    },
+    body: JSON.stringify(payload)
+  };
+}
+
+function clientIp(event) {
+  const headers = event.headers || {};
+  const forwarded = headers['x-forwarded-for'] || headers['X-Forwarded-For'];
+  if (forwarded) return String(forwarded).split(',')[0].trim();
+  return headers['x-nf-client-connection-ip'] || headers['X-Nf-Client-Connection-Ip'] || 'unknown';
 }
 
 function hitRateLimit(ip) {
@@ -43,15 +56,16 @@ function hitRateLimit(ip) {
     rateBuckets.set(ip, { startedAt: now, count: 1 });
     return false;
   }
+
   existing.count += 1;
   rateBuckets.set(ip, existing);
 
-  // Cheap opportunistic cleanup for warm serverless instances.
   if (rateBuckets.size > 1000) {
     for (const [key, bucket] of rateBuckets) {
       if (now - bucket.startedAt >= RATE_WINDOW_MS) rateBuckets.delete(key);
     }
   }
+
   return existing.count > RATE_MAX_REQUESTS;
 }
 
@@ -76,28 +90,31 @@ async function verifyTurnstile(token, ip) {
   }
 }
 
-export default async function handler(req, res) {
-  res.setHeader('Cache-Control', 'no-store');
-
-  if (req.method !== 'POST') {
-    res.setHeader('Allow', 'POST');
-    return res.status(405).json({ error: 'Method not allowed.' });
+exports.handler = async function handler(event) {
+  if (event.httpMethod !== 'POST') {
+    return json(405, { error: 'Method not allowed.' }, { Allow: 'POST' });
   }
 
-  const contentType = String(req.headers['content-type'] || '');
+  const contentType = String(event.headers?.['content-type'] || event.headers?.['Content-Type'] || '');
   if (!contentType.includes('application/json')) {
-    return res.status(415).json({ error: 'JSON request body required.' });
+    return json(415, { error: 'JSON request body required.' });
   }
 
-  const raw = req.body || {};
-  const website = text(raw.website, LIMITS.website);
-  // Honeypot: do not reveal detection behavior to bots.
-  if (website) return res.status(200).json({ ok: true });
+  let raw;
+  try {
+    raw = JSON.parse(event.body || '{}');
+  } catch {
+    return json(400, { error: 'Invalid JSON request body.' });
+  }
 
-  const ip = clientIp(req);
+  const website = text(raw.website, LIMITS.website);
+  if (website) return json(200, { ok: true });
+
+  const ip = clientIp(event);
   if (hitRateLimit(ip)) {
-    res.setHeader('Retry-After', String(Math.ceil(RATE_WINDOW_MS / 1000)));
-    return res.status(429).json({ error: 'Too many inquiries. Please try again later.' });
+    return json(429, { error: 'Too many inquiries. Please try again later.' }, {
+      'Retry-After': String(Math.ceil(RATE_WINDOW_MS / 1000))
+    });
   }
 
   const name = text(raw.name, LIMITS.name);
@@ -110,25 +127,25 @@ export default async function handler(req, res) {
   const turnstileToken = text(raw['cf-turnstile-response'] || raw.turnstileToken, 2048);
 
   if (!name || !company || !email) {
-    return res.status(400).json({ error: 'Name, company and email are required.' });
+    return json(400, { error: 'Name, company and email are required.' });
   }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(email)) {
-    return res.status(400).json({ error: 'Please provide a valid email address.' });
+    return json(400, { error: 'Please provide a valid email address.' });
   }
   if (!ALLOWED_PRODUCTS.has(product) || !ALLOWED_VOLUMES.has(volume)) {
-    return res.status(400).json({ error: 'Invalid product or volume selection.' });
+    return json(400, { error: 'Invalid product or volume selection.' });
   }
 
   const turnstile = await verifyTurnstile(turnstileToken, ip);
   if (!turnstile.ok) {
-    return res.status(400).json({ error: 'Security verification failed. Please refresh and try again.' });
+    return json(400, { error: 'Security verification failed. Please refresh and try again.' });
   }
 
   const apiKey = process.env.RESEND_API_KEY;
   const to = process.env.CONTACT_TO || 'frigonais@gmail.com';
   const from = process.env.CONTACT_FROM;
   if (!apiKey || !from) {
-    return res.status(503).json({ error: 'Contact email service is not configured.' });
+    return json(503, { error: 'Contact email service is not configured.' });
   }
 
   const html = `
@@ -168,11 +185,12 @@ export default async function handler(req, res) {
     const data = await response.json().catch(() => ({}));
     if (!response.ok) {
       console.error('Resend rejected Frigonais inquiry:', response.status, data?.message || 'unknown error');
-      return res.status(502).json({ error: 'Email provider rejected the request.' });
+      return json(502, { error: 'Email provider rejected the request.' });
     }
-    return res.status(200).json({ ok: true });
+
+    return json(200, { ok: true });
   } catch (error) {
     console.error('Frigonais contact delivery failed:', error?.message || 'unknown error');
-    return res.status(500).json({ error: 'Unable to send inquiry.' });
+    return json(500, { error: 'Unable to send inquiry.' });
   }
-}
+};
