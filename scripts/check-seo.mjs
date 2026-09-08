@@ -13,7 +13,8 @@ const files = [
   'build/assets/tailwind.css',
   'build/assets/lang-routing.js',
   'build/assets/i18n.js',
-  'build/assets/copy-fixes.js'
+  'build/assets/copy-fixes.js',
+  'build/assets/copy-final.js'
 ];
 
 for (const file of files) await access(file);
@@ -44,8 +45,8 @@ const assertions = [
   [srHome.includes('Pouzdan B2B dobavljač voćnih sastojaka'), 'Serbian HTML must use proofread pre-rendered copy'],
   [srHome.includes('30 godina') && srHome.includes('Ovo jedinstveno podneblje') && !srHome.includes('terroir'), 'Serbian company copy must be proofread and natural'],
   [products.includes('sour cherries') && products.includes('plums') && products.includes('data-i18n="tag_plum">Plum'), 'English IQF copy must list sour cherries and plums'],
-  [srProducts.includes('višnje') && srProducts.includes('šljive') && srProducts.includes('data-i18n="tag_plum">Šljiva') && !srProducts.includes('trešnje'), 'Serbian IQF copy must list višnje and šljive, never trešnje'],
-  [builtI18n.includes('FRIGONAIS_BUILD_COPY_FIXES') && builtI18n.includes("tag_cherry: 'Višnja'") && builtI18n.includes("tag_plum: 'Šljiva'"), 'runtime translations must include proofread fruit corrections'],
+  [srProducts.includes('višnje') && srProducts.includes('šljive') && srProducts.includes('data-i18n="tag_plum">Šljiva') && !srProducts.includes('trešnje') && !srProducts.includes('Trešnja'), 'Serbian IQF copy must list višnje and šljive, never trešnje'],
+  [builtI18n.includes('FRIGONAIS_BUILD_COPY_FIXES') && builtI18n.includes('FRIGONAIS_BUILD_COPY_FINAL') && builtI18n.includes("tag_cherry: 'Višnja'") && builtI18n.includes("tag_plum: 'Šljiva'") && builtI18n.includes("value_fruit_list: 'Višnja, malina, jagoda, kupina, borovnica, šljiva'"), 'runtime translations must include final proofread fruit corrections'],
   [home.includes('"@type": "WebSite"') && home.includes('"@type": "Organization"'), 'home structured data must include WebSite and Organization'],
   [products.includes('"@type": "CollectionPage"') && products.includes('"@type": "BreadcrumbList"') && products.includes('"@type": "ItemList"'), 'products structured data must include collection, breadcrumbs and item list'],
   [srProducts.includes('Pojedinačno brzo smrznute višnje') && srProducts.includes('IQF postupak'), 'Serbian structured/product content must use corrected IQF description'],
