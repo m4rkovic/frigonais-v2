@@ -45,7 +45,7 @@ const assertions = [
   [arHome.includes('<html lang="ar" dir="rtl"') && arHome.includes('href="https://www.frigonais.com/ar/"'), 'Arabic page must be RTL and self-canonical'],
   [srHome.includes('Pouzdan B2B dobavljač voćnih sastojaka'), 'Serbian HTML must use proofread pre-rendered copy'],
   [srHome.includes('30 godina') && srHome.includes('Ovo jedinstveno podneblje') && !srHome.includes('terroir'), 'Serbian company copy must be proofread and natural'],
-  [home.includes('Frozen Sour Cherry') && home.includes('Frozen Diced Apple') && home.includes('Machine-Cut Plum') && home.includes('Plum &amp; Prune Purées'), 'homepage must lead with the priority frozen fruit and puree products'],
+  [home.includes('Frozen Sour Cherry') && home.includes('Frozen Diced Apple') && home.includes('Machine-Cut Plum') && home.includes('Plum & Prune Purées'), 'homepage must lead with the priority frozen fruit and puree products'],
   [!home.includes('data-i18n="core_thermostable"') && !srHome.includes('od IQF smrznutog voća do termostabilnih pekarskih punjenja'), 'homepage positioning must not lead with bakery fillings'],
   [products.includes('sour cherry') && products.includes('Frozen diced apple') && products.includes('Machine-cut plum'), 'English frozen fruit card must prioritize sour cherry, diced apple and machine-cut plum'],
   [srProducts.includes('smrznuta jabuka na kockice') && srProducts.includes('mašinski sečena šljiva') && srProducts.includes('U IQF programu posebno izdvajamo višnju i šljivu'), 'Serbian frozen fruit copy must prioritize sour cherry, diced apple and machine-cut plum'],
