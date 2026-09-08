@@ -3,11 +3,11 @@ import { readFile, access } from 'node:fs/promises';
 const required = [
   'index.html', 'products.html', 'assets/site.css', 'assets/site.js', 'assets/i18n.js',
   'assets/frigonais-logo-green.svg', 'assets/og-image.png', 'netlify/functions/contact.js',
-  'robots.txt', 'sitemap.xml', 'netlify.toml', '_redirects', '_headers'
+  'robots.txt', 'sitemap.xml', 'netlify.toml', '_redirects', '_headers', 'scripts/prepare-deploy.mjs'
 ];
 for (const file of required) await access(file);
 
-const [home, products, site, css, netlify, redirects, headers, contact] = await Promise.all([
+const [home, products, site, css, netlify, redirects, headers, contact, deployScript] = await Promise.all([
   readFile('index.html', 'utf8'),
   readFile('products.html', 'utf8'),
   readFile('assets/site.js', 'utf8'),
@@ -15,7 +15,8 @@ const [home, products, site, css, netlify, redirects, headers, contact] = await 
   readFile('netlify.toml', 'utf8'),
   readFile('_redirects', 'utf8'),
   readFile('_headers', 'utf8'),
-  readFile('netlify/functions/contact.js', 'utf8')
+  readFile('netlify/functions/contact.js', 'utf8'),
+  readFile('scripts/prepare-deploy.mjs', 'utf8')
 ]);
 
 const assertions = [
@@ -28,7 +29,11 @@ const assertions = [
   [home.includes('for="name"') && home.includes('id="name"'), 'form labels must be associated with controls'],
   [site.includes('setMobileMenu(false)'), 'shared mobile menu close handling must exist'],
   [site.includes("fetch('/api/contact'"), 'frontend contact form must use the stable /api/contact endpoint'],
+  [netlify.includes('command = "npm run build"'), 'Netlify must run the production build'],
+  [netlify.includes('publish = "build"'), 'Netlify publish directory must be build'],
   [netlify.includes('functions = "netlify/functions"'), 'Netlify functions directory must be configured'],
+  [deployScript.includes("../build/assets/"), 'build script must copy static assets into the publish directory'],
+  [deployScript.includes("'_redirects'") && deployScript.includes("'_headers'"), 'build script must copy Netlify routing/header files'],
   [redirects.includes('/api/contact /.netlify/functions/contact 200'), 'Netlify must rewrite /api/contact to the contact function'],
   [redirects.includes('/sr/products /products.html?lang=sr 200') && redirects.includes('/ar/products /products.html?lang=ar 200'), 'localized product routes must be configured for Netlify'],
   [headers.includes('Content-Security-Policy:') && headers.includes('Cache-Control:'), 'Netlify security and asset headers must be present'],
