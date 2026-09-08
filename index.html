@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frigonais — Fruit Ingredients from Serbia | Since 1996</title>
+    <meta name="description" content="Frigonais is a Serbian B2B fruit ingredient producer supplying IQF frozen fruit, fruit purées, jams, thermostable fillings and custom fruit preparations to international food manufacturers." />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="theme-color" content="#0F3A0F" />
+    <link rel="canonical" href="https://www.frigonais.com/" />
+    <link rel="alternate" hreflang="en" href="https://www.frigonais.com/?lang=en" />
+    <link rel="alternate" hreflang="sr" href="https://www.frigonais.com/?lang=sr" />
+    <link rel="alternate" hreflang="zh" href="https://www.frigonais.com/?lang=zh" />
+    <link rel="alternate" hreflang="ar" href="https://www.frigonais.com/?lang=ar" />
+    <link rel="alternate" hreflang="x-default" href="https://www.frigonais.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Frigonais" />
+    <meta property="og:title" content="Frigonais — Fruit Ingredients from Serbia" />
+    <meta property="og:description" content="Certified B2B fruit ingredients for food manufacturers worldwide. IQF fruit, purées, jams, thermostable fillings and custom formulations." />
+    <meta property="og:url" content="https://www.frigonais.com/" />
+    <meta property="og:image" content="https://www.frigonais.com/assets/frigonais-logo-green.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="assets/frigonais-logo-stacked.svg" type="image/svg+xml" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Instrument+Serif:ital@0;1&family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { 50: '#F0F7F1', 100: '#D9ECD9', 200: '#B4D9B4', 400: '#5FAD5F', 500: '#3D8B3D', 600: '#2D6E2D', 700: '#1F5C1F', 800: '#174A17', 900: '#0F3A0F', 950: '#082508' },
+                        accent: { 50: '#FFF5F5', 100: '#FFE3E3', 200: '#FFC4C4', 400: '#E8505B', 500: '#D63A45', 600: '#B82D37', 700: '#9A1F28', 800: '#7D1A22' },
+                        neutral: { 50: '#FAFAF9', 100: '#F5F4F2', 150: '#EDECE9', 200: '#E2E0DC', 300: '#C9C6BF', 400: '#A8A39A', 500: '#8A8479', 600: '#6B665C', 700: '#4D4943', 800: '#33312C', 900: '#1A1917' },
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+                        serif: ['"Instrument Serif"', 'Georgia', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; color: #33312C; }
+        html[lang="zh"] body { font-family: 'Noto Sans SC', 'Plus Jakarta Sans', sans-serif; }
+        html[lang="ar"] body { font-family: 'Noto Sans Arabic', 'Plus Jakarta Sans', sans-serif; }
+
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: #F5F4F2; }
+        ::-webkit-scrollbar-thumb { background: #C9C6BF; border-radius: 3px; }
+
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        .hero-overlay { background: linear-gradient(135deg, rgba(8,37,8,0.92) 0%, rgba(15,58,15,0.85) 40%, rgba(31,92,31,0.75) 100%); }
+
+        .product-img { background: linear-gradient(145deg, #f0f7f1 0%, #d9ecd9 100%); transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1); }
+        .product-card:hover .product-img { transform: scale(1.03); }
+
+        .btn-primary { background: #2D6E2D; transition: all 0.3s ease; }
+        .btn-primary:hover { background: #1F5C1F; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(31,92,31,0.25); }
+        .btn-outline { border: 1.5px solid #2D6E2D; color: #2D6E2D; transition: all 0.3s ease; }
+        .btn-outline:hover { background: #2D6E2D; color: white; }
+
+        .nav-scrolled { background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+        .stat-block { border-left: 3px solid #2D6E2D; }
+        html[dir="rtl"] .stat-block { border-left: none; border-right: 3px solid #2D6E2D; }
+
+        .dropdown-content { opacity: 0; visibility: hidden; transform: translateY(8px); transition: all 0.25s ease; }
+        .dropdown:hover .dropdown-content { opacity: 1; visibility: visible; transform: translateY(0); }
+
+        .grid-pattern {
+            background-image: linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .mobile-overlay { opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+        .mobile-overlay.open { opacity: 1; pointer-events: all; }
+        .mobile-drawer { transform: translateX(100%); transition: transform 0.35s cubic-bezier(0.22,1,0.36,1); }
+        html[dir="rtl"] .mobile-drawer { transform: translateX(-100%); }
+        .mobile-overlay.open .mobile-drawer { transform: translateX(0); }
+
+        .sep-line { width: 0; transition: width 0.8s cubic-bezier(0.22,1,0.36,1); }
+        .sep-line.active { width: 48px; }
+
+        input:focus, textarea:focus, select:focus { outline: none; border-color: #2D6E2D; box-shadow: 0 0 0 3px rgba(45,110,45,0.1); }
+
+        /* Language picker */
+        .lang-picker { position: relative; }
+        .lang-menu { display: none; position: absolute; top: 100%; right: 0; min-width: 170px; background: white; border: 1px solid #E2E0DC; border-radius: 10px; box-shadow: 0 12px 32px rgba(0,0,0,0.12); padding: 6px; z-index: 100; margin-top: 4px; }
+        html[dir="rtl"] .lang-menu { right: auto; left: 0; }
+        .lang-picker.open .lang-menu { display: block; }
+        .lang-option { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 7px; cursor: pointer; font-size: 13px; font-weight: 500; color: #4D4943; transition: all 0.15s; }
+        .lang-option:hover { background: #F0F7F1; color: #1F5C1F; }
+        .lang-option.active { background: #D9ECD9; color: #174A17; font-weight: 600; }
+
+        /* RTL adjustments */
+        html[dir="rtl"] .dropdown-content { left: 0; right: auto; }
+        html[dir="rtl"] .mobile-drawer { right: auto; left: 0; }
+
+        /* Process step line for RTL */
+        html[dir="rtl"] .process-line { border-left: none; }
+
+        /* V2 accessibility, brand, catalogue and conversion improvements */
+        body { background: #fff; }
+        section[id] { scroll-margin-top: 88px; }
+        a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px solid rgba(45,110,45,.32); outline-offset: 3px; }
+        .brand-link { display:flex; align-items:center; height:100%; padding:8px 0; overflow:visible; }
+        .brand-logo { display:block; width:auto; height:48px; max-width:225px; object-fit:contain; object-position:left center; overflow:visible; flex-shrink:0; }
+        .brand-logo.footer-logo { height:44px; max-width:230px; }
+        .hero-noise { background-image: radial-gradient(circle at 15% 20%, rgba(255,255,255,.08) 0 1px, transparent 1.5px), radial-gradient(circle at 80% 70%, rgba(255,255,255,.06) 0 1px, transparent 1.5px); background-size: 26px 26px, 34px 34px; }
+        .hero-mark { position:absolute; right:-110px; bottom:-180px; width:620px; opacity:.055; filter:brightness(0) invert(1); pointer-events:none; }
+        .trust-strip { box-shadow: 0 14px 36px rgba(15,58,15,.07); }
+        .trust-item { white-space:nowrap; }
+        .product-visual { position:relative; overflow:hidden; isolation:isolate; }
+        .product-visual:before { content:''; position:absolute; width:190px; height:190px; border-radius:999px; background:rgba(255,255,255,.55); right:-55px; top:-70px; z-index:-1; }
+        .fruit-art { width:112px; height:112px; filter:drop-shadow(0 14px 18px rgba(25,40,20,.12)); }
+        .spec-row { margin-top:16px; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+        .spec-chip { background:#FAFAF9; border:1px solid #EDECE9; border-radius:8px; padding:9px 10px; }
+        .spec-chip b { display:block; font-size:10px; text-transform:uppercase; letter-spacing:.08em; color:#8A8479; margin-bottom:2px; }
+        .spec-chip span { font-size:12px; font-weight:600; color:#4D4943; }
+        .why-card { transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+        .why-card:hover { transform:translateY(-3px); box-shadow:0 14px 32px rgba(15,58,15,.08); border-color:#B4D9B4; }
+        .modal-shell { opacity:0; pointer-events:none; transition:opacity .2s ease; }
+        .modal-shell.open { opacity:1; pointer-events:auto; }
+        .modal-card { transform:translateY(12px) scale(.99); transition:transform .2s ease; }
+        .modal-shell.open .modal-card { transform:none; }
+        .form-status[hidden] { display:none; }
+        .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+        @media (max-width: 1023px) { .brand-logo { height:42px; max-width:190px; } .hero-mark{width:420px;right:-160px;bottom:-120px;} }
+        @media (prefers-reduced-motion: reduce) { html{scroll-behavior:auto;} *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important;} .reveal{opacity:1!important;transform:none!important;} }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"Organization",
+      "name":"Frigonais D.O.O.",
+      "url":"https://www.frigonais.com/",
+      "logo":"https://www.frigonais.com/assets/frigonais-logo-green.svg",
+      "foundingDate":"1996",
+      "email":"frigonais@gmail.com",
+      "telephone":"+381 18 259 044",
+      "address":{"@type":"PostalAddress","streetAddress":"Ulica Mladih 4","postalCode":"18000","addressLocality":"Niš","addressCountry":"RS"},
+      "areaServed":["Europe","North America","Middle East"]
+    }
+    </script>
+</head>
+<body id="top">
+
+<!-- ==================== TOP BAR ==================== -->
+<div class="bg-brand-950 text-white/70 text-xs py-2 hidden md:block">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 flex justify-between items-center">
+        <div class="flex items-center gap-6">
+            <span class="flex items-center gap-1.5">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+                <span data-i18n="topbar_location">Niš, Serbia</span>
+            </span>
+            <span class="flex items-center gap-1.5">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+                frigonais@gmail.com
+            </span>
+        </div>
+        <div class="flex items-center gap-6">
+            <span>FSSC 22000 · Organic · HACCP · Kosher</span>
+            <!-- Desktop lang picker -->
+            <div class="lang-picker border-l border-white/10 pl-4" id="topLangPicker">
+                <button class="flex items-center gap-1.5 hover:text-white transition-colors" onclick="toggleLangMenu('topLangPicker')">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/></svg>
+                    <span class="current-lang-label font-semibold">EN</span>
+                    <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+                </button>
+                <div class="lang-menu">
+                    <div class="lang-option active" data-lang="en" onclick="setLanguage('en')"><span>🇬🇧</span> English</div>
+                    <div class="lang-option" data-lang="sr" onclick="setLanguage('sr')"><span>🇷🇸</span> Srpski</div>
+                    <div class="lang-option" data-lang="zh" onclick="setLanguage('zh')"><span>🇨🇳</span> 中文</div>
+                    <div class="lang-option" data-lang="ar" onclick="setLanguage('ar')"><span>🇸🇦</span> العربية</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== NAVIGATION ==================== -->
+<nav id="navbar" class="sticky top-0 z-50 bg-white border-b border-neutral-200 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16 lg:h-[72px]">
+            <a href="#top" class="brand-link" aria-label="Frigonais home">
+                <img src="assets/frigonais-logo-green.svg" class="brand-logo" alt="Frigonais" width="190" height="42">
+            </a>
+            <div class="hidden lg:flex items-center gap-1">
+                <a href="#about" class="px-4 py-2 text-sm font-medium text-neutral-600 hover:text-brand-700 rounded-lg hover:bg-brand-50 transition-all" data-i18n="nav_about">About</a>
+                <div class="dropdown relative">
+                    <button class="px-4 py-2 text-sm font-medium text-neutral-600 hover:text-brand-700 rounded-lg hover:bg-brand-50 transition-all flex items-center gap-1">
+                        <span data-i18n="nav_products">Products</span>
+                        <svg class="w-3.5 h-3.5 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+                    </button>
+                    <div class="dropdown-content absolute top-full left-0 pt-2">
+                        <div class="bg-white rounded-xl shadow-xl border border-neutral-100 p-4 min-w-[280px]">
+                            <div class="text-[10px] uppercase tracking-wider text-neutral-400 font-semibold mb-3 px-3" data-i18n="dd_range">Product Range</div>
+                            <a href="products.html#iqf" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-brand-50 transition-all group">
+                                <span class="w-8 h-8 rounded-lg bg-brand-100 flex items-center justify-center text-base group-hover:bg-brand-200 transition-colors">❄️</span>
+                                <div><div class="text-sm font-medium text-neutral-800" data-i18n="p1_name">Frozen Fruit</div><div class="text-xs text-neutral-400" data-i18n="dd_frozen_sub">IQF berries & stone fruit</div></div>
+                            </a>
+                            <a href="products.html#jams" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-brand-50 transition-all group">
+                                <span class="w-8 h-8 rounded-lg bg-accent-100 flex items-center justify-center text-base group-hover:bg-accent-200 transition-colors">🫙</span>
+                                <div><div class="text-sm font-medium text-neutral-800" data-i18n="p2_name">Jams & Fruit Spreads</div><div class="text-xs text-neutral-400" data-i18n="dd_jam_sub">Traditional & industrial</div></div>
+                            </a>
+                            <a href="products.html#purees" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-brand-50 transition-all group">
+                                <span class="w-8 h-8 rounded-lg bg-brand-100 flex items-center justify-center text-base group-hover:bg-brand-200 transition-colors">🧃</span>
+                                <div><div class="text-sm font-medium text-neutral-800" data-i18n="p3_name">Purées & Fillings</div><div class="text-xs text-neutral-400" data-i18n="dd_puree_sub">For dairy, bakery & beverage</div></div>
+                            </a>
+                            <div class="border-t border-neutral-100 mt-2 pt-2">
+                                <a href="products.html" class="flex items-center gap-2 px-3 py-2 text-sm text-brand-600 font-medium hover:text-brand-800" data-i18n="dd_view_all">View All Products →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#quality" class="px-4 py-2 text-sm font-medium text-neutral-600 hover:text-brand-700 rounded-lg hover:bg-brand-50 transition-all" data-i18n="nav_quality">Quality & Certifications</a>
+                <a href="#exports" class="px-4 py-2 text-sm font-medium text-neutral-600 hover:text-brand-700 rounded-lg hover:bg-brand-50 transition-all" data-i18n="nav_global">Global Reach</a>
+                <a href="#sustainability" class="px-4 py-2 text-sm font-medium text-neutral-600 hover:text-brand-700 rounded-lg hover:bg-brand-50 transition-all" data-i18n="nav_sustain">Sustainability</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <!-- Mobile lang button -->
+                <div class="lang-picker lg:hidden" id="mobileLangPicker">
+                    <button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-neutral-100" onclick="toggleLangMenu('mobileLangPicker')">
+                        <svg class="w-5 h-5 text-neutral-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/></svg>
+                    </button>
+                    <div class="lang-menu">
+                        <div class="lang-option active" data-lang="en" onclick="setLanguage('en')"><span>🇬🇧</span> English</div>
+                        <div class="lang-option" data-lang="sr" onclick="setLanguage('sr')"><span>🇷🇸</span> Srpski</div>
+                        <div class="lang-option" data-lang="zh" onclick="setLanguage('zh')"><span>🇨🇳</span> 中文</div>
+                        <div class="lang-option" data-lang="ar" onclick="setLanguage('ar')"><span>🇸🇦</span> العربية</div>
+                    </div>
+                </div>
+                <a href="#contact" class="hidden lg:inline-flex btn-primary text-white px-5 py-2.5 rounded-lg text-sm font-semibold" data-i18n="nav_quote">Request a Quote</a>
+                <button id="menuToggle" aria-controls="mobileOverlay" aria-expanded="false" aria-label="Open menu" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg hover:bg-neutral-100">
+                    <svg class="w-5 h-5 text-neutral-700" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- ==================== MOBILE MENU ==================== -->
+<div id="mobileOverlay" class="mobile-overlay fixed inset-0 z-50 bg-black/40">
+    <div class="mobile-drawer absolute right-0 top-0 bottom-0 w-80 bg-white shadow-2xl">
+        <div class="flex items-center justify-between p-5 border-b border-neutral-100">
+            <span class="font-bold text-neutral-900" data-i18n="mob_menu">Menu</span>
+            <button id="menuClose" aria-label="Close menu" class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-neutral-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+        <div class="p-5 space-y-1">
+            <a href="#about" class="mob-link block px-4 py-3 text-sm font-medium text-neutral-700 hover:bg-brand-50 hover:text-brand-700 rounded-lg transition-all" data-i18n="nav_about">About Us</a>
+            <a href="products.html" class="mob-link block px-4 py-3 text-sm font-medium text-neutral-700 hover:bg-brand-50 hover:text-brand-700 rounded-lg transition-all" data-i18n="nav_products">Products</a>
+            <a href="#quality" class="mob-link block px-4 py-3 text-sm font-medium text-neutral-700 hover:bg-brand-50 hover:text-brand-700 rounded-lg transition-all" data-i18n="nav_quality">Quality & Certifications</a>
+            <a href="#exports" class="mob-link block px-4 py-3 text-sm font-medium text-neutral-700 hover:bg-brand-50 hover:text-brand-700 rounded-lg transition-all" data-i18n="nav_global">Global Reach</a>
+            <a href="#sustainability" class="mob-link block px-4 py-3 text-sm font-medium text-neutral-700 hover:bg-brand-50 hover:text-brand-700 rounded-lg transition-all" data-i18n="nav_sustain">Sustainability</a>
+            <a href="#contact" class="mob-link block px-4 py-3 text-sm font-medium text-neutral-700 hover:bg-brand-50 hover:text-brand-700 rounded-lg transition-all" data-i18n="nav_contact">Contact</a>
+        </div>
+        <div class="p-5 border-t border-neutral-100">
+            <a href="#contact" class="mob-link btn-primary text-white w-full py-3 rounded-lg text-sm font-semibold text-center block" data-i18n="nav_quote">Request a Quote</a>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== HERO ==================== -->
+<section class="relative min-h-[620px] lg:min-h-[700px] flex items-center overflow-hidden" aria-labelledby="hero-title">
+    <div class="absolute inset-0">
+        <div class="w-full h-full" style="background: radial-gradient(circle at 72% 35%, rgba(95,173,95,.24), transparent 30%), linear-gradient(135deg,#082508 0%,#0F3A0F 40%,#1F5C1F 100%);"></div>
+        <div class="hero-noise absolute inset-0"></div>
+        <div class="hero-overlay absolute inset-0"></div>
+        <img src="assets/frigonais-logo-stacked.svg" alt="" aria-hidden="true" class="hero-mark">
+    </div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 py-20 lg:py-0">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <div class="inline-flex items-center gap-2 bg-white/10 border border-white/15 rounded-full px-4 py-1.5 mb-6 reveal">
+                    <div class="w-1.5 h-1.5 rounded-full bg-green-400"></div>
+                    <span class="text-white/80 text-xs font-medium tracking-wide" data-i18n="hero_badge">Trusted B2B Fruit Ingredient Supplier</span>
+                </div>
+                <h1 id="hero-title" class="text-white text-4xl md:text-5xl lg:text-[3.5rem] font-bold leading-[1.1] mb-6 reveal" data-i18n="hero_title" data-i18n-html="true">
+                    Fruit Ingredients from Serbia,<br><span class="font-serif italic font-normal text-brand-200">Built for Global Food Production</span>
+                </h1>
+                <p class="text-white/65 text-base lg:text-lg leading-relaxed max-w-lg mb-8 reveal" data-i18n="hero_desc">
+                    IQF frozen fruit, fruit purées, jams, thermostable fillings and custom preparations for food manufacturers across 15+ international markets.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-7 reveal" aria-label="Core product categories">
+                    <span class="text-[11px] font-semibold text-white/75 bg-white/10 border border-white/10 rounded-full px-3 py-1.5">IQF Fruit</span>
+                    <span class="text-[11px] font-semibold text-white/75 bg-white/10 border border-white/10 rounded-full px-3 py-1.5">Fruit Purées</span>
+                    <span class="text-[11px] font-semibold text-white/75 bg-white/10 border border-white/10 rounded-full px-3 py-1.5">Thermostable Fillings</span>
+                    <span class="text-[11px] font-semibold text-white/75 bg-white/10 border border-white/10 rounded-full px-3 py-1.5">Custom Formulations</span>
+                </div>
+                <div class="flex flex-wrap gap-3 reveal">
+                    <a href="#products" class="bg-white text-brand-800 px-6 py-3 rounded-lg text-sm font-semibold hover:bg-neutral-50 transition-all shadow-lg flex items-center gap-2">
+                        <span data-i18n="hero_cta1">Explore Our Products</span>
+                        <svg class="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                    </a>
+                    <a href="#contact" class="border border-white/30 text-white px-6 py-3 rounded-lg text-sm font-semibold hover:bg-white/10 transition-all" data-i18n="hero_cta2">Request a Quote</a>
+                </div>
+                <div class="flex items-center gap-6 mt-10 pt-8 border-t border-white/10 reveal">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
+                            <svg class="w-4 h-4 text-white/70" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+                        </div>
+                        <span class="text-white/60 text-xs">FSSC 22000</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
+                            <svg class="w-4 h-4 text-white/70" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/></svg>
+                        </div>
+                        <span class="text-white/60 text-xs">Organic</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
+                            <svg class="w-4 h-4 text-white/70" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/></svg>
+                        </div>
+                        <span class="text-white/60 text-xs">SEDEX/SMETA</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden lg:block">
+                <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-8 reveal">
+                    <div class="text-white/50 text-xs font-semibold uppercase tracking-wider mb-6" data-i18n="hero_glance">Company at a Glance</div>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="stat-block pl-4"><div class="text-3xl font-bold text-white">1996</div><div class="text-white/50 text-sm mt-1" data-i18n="stat_est">Established</div></div>
+                        <div class="stat-block pl-4"><div class="text-3xl font-bold text-white">120<span class="text-brand-300 text-lg">+</span></div><div class="text-white/50 text-sm mt-1" data-i18n="stat_emp">Employees</div></div>
+                        <div class="stat-block pl-4"><div class="text-3xl font-bold text-white">€5M<span class="text-brand-300 text-lg">+</span></div><div class="text-white/50 text-sm mt-1" data-i18n="stat_exp">Annual Exports</div></div>
+                        <div class="stat-block pl-4"><div class="text-3xl font-bold text-white">15<span class="text-brand-300 text-lg">+</span></div><div class="text-white/50 text-sm mt-1" data-i18n="stat_mkt">Export Markets</div></div>
+                    </div>
+                    <div class="mt-6 pt-6 border-t border-white/10">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-lg">🇷🇸</div>
+                            <div>
+                                <div class="text-white text-sm font-medium" data-i18n="hero_hq">Headquartered in Niš, Serbia</div>
+                                <div class="text-white/40 text-xs" data-i18n="hero_prod">Production in Kuršumlija eco-region</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== TRUST STRIP ==================== -->
+<section class="relative z-20 -mt-8 px-6" aria-label="Certifications and export capability">
+    <div class="trust-strip max-w-5xl mx-auto bg-white rounded-2xl border border-neutral-200 px-5 sm:px-7 py-4 flex gap-5 sm:gap-8 items-center justify-between overflow-x-auto">
+        <div class="trust-item flex items-center gap-2 text-sm font-semibold text-neutral-700"><span class="w-7 h-7 rounded-full bg-brand-50 text-brand-700 flex items-center justify-center">✓</span>FSSC 22000</div>
+        <div class="trust-item flex items-center gap-2 text-sm font-semibold text-neutral-700"><span class="w-7 h-7 rounded-full bg-brand-50 text-brand-700 flex items-center justify-center">✓</span>Organic</div>
+        <div class="trust-item flex items-center gap-2 text-sm font-semibold text-neutral-700"><span class="w-7 h-7 rounded-full bg-brand-50 text-brand-700 flex items-center justify-center">✓</span>HACCP</div>
+        <div class="trust-item flex items-center gap-2 text-sm font-semibold text-neutral-700"><span class="w-7 h-7 rounded-full bg-brand-50 text-brand-700 flex items-center justify-center">✓</span>SEDEX / SMETA</div>
+        <div class="trust-item flex items-center gap-2 text-sm font-semibold text-neutral-700"><span class="w-7 h-7 rounded-full bg-brand-50 text-brand-700 flex items-center justify-center">✓</span>Kosher</div>
+    </div>
+</section>
+
+<!-- ==================== ABOUT ==================== -->
+<section id="about" class="py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid lg:grid-cols-5 gap-16 items-start">
+            <div class="lg:col-span-3 reveal">
+                <div class="text-xs font-semibold uppercase tracking-widest text-brand-600 mb-3" data-i18n="about_label">About Frigonais</div>
+                <h2 class="text-3xl lg:text-4xl font-bold text-neutral-900 leading-tight mb-6" data-i18n="about_title" data-i18n-html="true">
+                    Nearly Three Decades of<br><span class="font-serif italic font-normal text-brand-700">Fruit Processing Excellence</span>
+                </h2>
+                <div class="h-px bg-brand-600 w-12 mb-6 sep-line"></div>
+                <div class="space-y-4 text-neutral-600 leading-relaxed">
+                    <p data-i18n="about_p1">Founded in 1996 as a family enterprise, Frigonais has grown into one of Serbia's leading fruit processing companies with over 120 employees and a global reach spanning three continents.</p>
+                    <p data-i18n="about_p2">Our headquarters are based in Niš, while production facilities are strategically located in the Kuršumlija spa region — an ecologically pristine area renowned for its exceptional fruit-growing conditions. This unique terroir provides the foundation for our premium-quality raw materials.</p>
+                    <p data-i18n="about_p3">Through both hot and cold processing methods, we transform locally sourced fruits into a comprehensive range of B2B ingredients: frozen fruit (IQF), jams, fruit purées, thermostable masses, yogurt fruit preparations, and custom fruit fillings — serving food manufacturers, bakeries, dairies, and distributors worldwide.</p>
+                </div>
+            </div>
+            <div class="lg:col-span-2 space-y-4 reveal">
+                <div class="bg-neutral-50 rounded-xl p-6 border border-neutral-150">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-lg bg-brand-100 flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-brand-700" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-neutral-800 text-sm" data-i18n="diff1_title">Strategic Location</div>
+                            <div class="text-neutral-500 text-sm mt-1" data-i18n="diff1_desc">Production in Serbia's prime fruit-growing Kuršumlija eco-region, ensuring direct access to premium raw materials.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-neutral-50 rounded-xl p-6 border border-neutral-150">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-lg bg-brand-100 flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-brand-700" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/></svg>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-neutral-800 text-sm" data-i18n="diff2_title">Dual Processing</div>
+                            <div class="text-neutral-500 text-sm mt-1" data-i18n="diff2_desc">State-of-the-art hot and cold processing lines enabling frozen, ambient, and heat-stable product formats.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-neutral-50 rounded-xl p-6 border border-neutral-150">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-lg bg-brand-100 flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-brand-700" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/></svg>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-neutral-800 text-sm" data-i18n="diff3_title">Global Export Network</div>
+                            <div class="text-neutral-500 text-sm mt-1" data-i18n="diff3_desc">Serving 15+ countries across North America, Europe, and the Middle East with €5M+ in annual exports.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-neutral-50 rounded-xl p-6 border border-neutral-150">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-lg bg-brand-100 flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-brand-700" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"/></svg>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-neutral-800 text-sm" data-i18n="diff4_title">Custom Formulations</div>
+                            <div class="text-neutral-500 text-sm mt-1" data-i18n="diff4_desc">Tailored fruit preparations developed to meet your specific product specifications and application needs.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== WHY FRIGONAIS ==================== -->
+<section class="py-18 lg:py-22 bg-neutral-50 border-y border-neutral-100">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10 reveal">
+            <div class="max-w-2xl">
+                <div class="text-xs font-semibold uppercase tracking-widest text-brand-600 mb-3">Why Frigonais</div>
+                <h2 class="text-3xl lg:text-4xl font-bold text-neutral-900 leading-tight">A supply partner built around <span class="font-serif italic font-normal text-brand-700">food manufacturing needs</span></h2>
+            </div>
+            <p class="text-neutral-500 max-w-md leading-relaxed">From local fruit sourcing and dual processing to international compliance and custom preparations, our operations are designed for dependable B2B supply.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <article class="why-card bg-white rounded-xl p-6 border border-neutral-200 reveal"><div class="text-brand-700 text-3xl font-bold">1996</div><h3 class="font-bold text-neutral-900 mt-4">Nearly 30 years of processing</h3><p class="text-sm text-neutral-500 mt-2 leading-relaxed">Family-founded fruit processing experience with established production operations in Serbia.</p></article>
+            <article class="why-card bg-white rounded-xl p-6 border border-neutral-200 reveal"><div class="w-10 h-10 rounded-lg bg-brand-100 text-brand-700 flex items-center justify-center text-lg">◉</div><h3 class="font-bold text-neutral-900 mt-4">Close to raw materials</h3><p class="text-sm text-neutral-500 mt-2 leading-relaxed">Production in the Kuršumlija region provides direct access to important Serbian fruit-growing areas.</p></article>
+            <article class="why-card bg-white rounded-xl p-6 border border-neutral-200 reveal"><div class="w-10 h-10 rounded-lg bg-brand-100 text-brand-700 flex items-center justify-center text-lg">↔</div><h3 class="font-bold text-neutral-900 mt-4">Hot + cold processing</h3><p class="text-sm text-neutral-500 mt-2 leading-relaxed">A broad processing portfolio supports frozen, ambient, thermostable and custom fruit formats.</p></article>
+            <article class="why-card bg-white rounded-xl p-6 border border-neutral-200 reveal"><div class="text-brand-700 text-3xl font-bold">15+</div><h3 class="font-bold text-neutral-900 mt-4">International markets</h3><p class="text-sm text-neutral-500 mt-2 leading-relaxed">Export experience across Europe, North America and the Middle East with international compliance standards.</p></article>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== PRODUCTS ==================== -->
+<section id="products" class="py-20 lg:py-28 bg-neutral-50 grid-pattern">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="max-w-2xl mb-14 reveal">
+            <div class="text-xs font-semibold uppercase tracking-widest text-brand-600 mb-3" data-i18n="prod_label">Product Range</div>
+            <h2 class="text-3xl lg:text-4xl font-bold text-neutral-900 leading-tight mb-4" data-i18n="prod_title">Comprehensive Fruit Ingredient Solutions</h2>
+            <p class="text-neutral-500 leading-relaxed" data-i18n="prod_desc">Our product portfolio covers the full spectrum of processed fruit ingredients — from IQF frozen fruit to heat-stable bakery fillings — all produced to the highest international quality standards.</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Prod 1 -->
+            <div class="product-card bg-white rounded-xl border border-neutral-200 overflow-hidden hover:shadow-lg transition-shadow duration-300 reveal">
+                <div class="overflow-hidden"><div class="product-img product-visual h-48 flex items-center justify-center relative"><svg class="fruit-art" viewBox="0 0 120 120" aria-hidden="true"><path d="M58 52C49 31 42 23 28 18" fill="none" stroke="#2D6E2D" stroke-width="5" stroke-linecap="round"/><path d="M60 52c5-24 17-34 34-38" fill="none" stroke="#2D6E2D" stroke-width="5" stroke-linecap="round"/><circle cx="43" cy="75" r="23" fill="#D63A45"/><circle cx="82" cy="75" r="23" fill="#B82D37"/><circle cx="35" cy="67" r="5" fill="#FFC4C4" opacity=".7"/></svg><div class="absolute top-3 left-3 bg-brand-600 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded" data-i18n="tag_cold">Cold Processing</div></div></div>
+                <div class="p-6">
+                    <h3 class="font-bold text-neutral-900 text-lg" data-i18n="p1_name">IQF Frozen Fruit</h3>
+                    <p class="text-neutral-500 text-sm mt-2 leading-relaxed" data-i18n="p1_desc">Individually Quick Frozen cherries, raspberries, strawberries, blackberries, and blueberries. Preserves peak freshness, nutrition, and natural flavor profile.</p>
+                    <div class="flex flex-wrap gap-1.5 mt-4">
+                        <span class="text-[11px] px-2.5 py-1 rounded-md bg-neutral-100 text-neutral-600 font-medium" data-i18n="tag_cherry">Cherry</span>
+                        <span class="text-[11px] px-2.5 py-1 rounded-md bg-neutral-100 text-neutral-600 font-medium" data-i18n="tag_raspberry">Raspberry</span>
+                        <span class="text-[11px] px-2.5 py-1 rounded-md bg-neutral-100 text-neutral-600 font-medium" data-i18n="tag_strawberry">Strawberry</span>
+                        <span class="text-[11px] px-2.5 py-1 rounded-md bg-neutral-100 text-neutral-600 font-medium" data-i18n="tag_blackberry">Blackberry</span>
+                    </div>
+                    <a href="#contact" class="spec-request inline-flex items-center gap-1.5 text-brand-600 text-sm font-semibold mt-5 hover:text-brand-800 transition-colors"><span data-i18n="req_specs">Request Specs</span> <svg class="w-3.5 h-3.5 rtl:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></a>
+                </div>
+            </div>
+            <!-- Prod 2 -->
+            <div class="product-card bg-white rounded-xl border border-neutral-200 overflow-hidden hover:shadow-lg transition-shadow duration-300 reveal">
+                <div class="overflow-hidden"><div class="product-img product-visual h-48 flex items-center justify-center relative" style="background: linear-gradient(145deg, #FFF5F5 0%, #FFE3E3 100%);"><svg class="fruit-art" viewBox="0 0 120 120" aria-hidden="true"><rect x="32" y="28" width="56" height="70" rx="14" fill="#fff" stroke="#C9C6BF" stroke-width="3"/><rect x="38" y="45" width="44" height="43" rx="9" fill="#D63A45"/><rect x="36" y="22" width="48" height="14" rx="5" fill="#87A45E"/><path d="M47 63c10-9 17-10 27-1" fill="none" stroke="#FFE3E3" stroke-width="4" stroke-linecap="round"/></svg><div class="absolute top-3 left-3 bg-accent-600 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded" data-i18n="tag_hot">Hot Processing</div></div></div>
+                <div class="p-6">
+                    <h3 class="font-bold text-neutral-900 text-lg" data-i18n="p2_name">Jams & Fruit Spreads</h3>
+                    <p class="text-neutral-500 text-sm mt-2 leading-relaxed" data-i18n="p2_desc">Industrial-scale fruit jams and spreads produced with traditional recipes and modern technology. For bakery, dairy, and retail applications.</p>
+                    <a href="#contact" class="spec-request inline-flex items-center gap-1.5 text-brand-600 text-sm font-semibold mt-5 hover:text-brand-800 transition-colors"><span data-i18n="req_specs">Request Specs</span> <svg class="w-3.5 h-3.5 rtl:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></a>
+                </div>
+            </div>
+            <!-- Prod 3 -->
+            <div class="product-card bg-white rounded-xl border border-neutral-200 overflow-hidden hover:shadow-lg transition-shadow duration-300 reveal">
+                <div class="overflow-hidden"><div class="product-img product-visual h-48 flex items-center justify-center relative"><svg class="fruit-art" viewBox="0 0 120 120" aria-hidden="true"><path d="M38 31h44l7 18v47H31V49z" fill="#fff" stroke="#C9C6BF" stroke-width="3"/><path d="M37 54h46v36H37z" fill="#E8505B" opacity=".9"/><path d="M58 30l12-14" stroke="#2D6E2D" stroke-width="5" stroke-linecap="round"/><circle cx="61" cy="70" r="10" fill="#FFC4C4"/></svg><div class="absolute top-3 left-3 bg-brand-600 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded" data-i18n="tag_hot">Hot Processing</div></div></div>
+                <div class="p-6">
+                    <h3 class="font-bold text-neutral-900 text-lg" data-i18n="p3_name">Fruit Purées</h3>
+                    <p class="text-neutral-500 text-sm mt-2 leading-relaxed" data-i18n="p3_desc">Smooth, consistent purées optimized for the beverage, dairy, and confectionery industries. Single-fruit and blended formats available.</p>
+                    <a href="#contact" class="spec-request inline-flex items-center gap-1.5 text-brand-600 text-sm font-semibold mt-5 hover:text-brand-800 transition-colors"><span data-i18n="req_specs">Request Specs</span> <svg class="w-3.5 h-3.5 rtl:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></a>
+                </div>
+            </div>
+        </div>
+        <div class="mt-10 text-center reveal">
+            <a href="products.html" class="btn-primary inline-flex items-center gap-2 text-white px-7 py-3 rounded-lg text-sm font-semibold shadow-sm" data-i18n="view_all_products">
+                View All Products
+                <svg class="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+            </a>
+        </div>
+        <div class="mt-12 rounded-xl border border-brand-100 bg-brand-50 px-6 py-5 reveal flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div><div class="font-bold text-neutral-900">Built for industrial applications</div><div class="text-sm text-neutral-500 mt-1">Technical specifications, samples and custom formulation discussions are available through our commercial team.</div></div>
+            <a href="#contact" class="btn-outline px-5 py-2.5 rounded-lg text-sm font-semibold whitespace-nowrap">Discuss Your Application</a>
+        </div>
+        <!-- Industries -->
+        <div class="mt-8 bg-white rounded-xl border border-neutral-200 p-8 reveal">
+            <div class="text-xs font-semibold uppercase tracking-widest text-neutral-400 mb-5" data-i18n="ind_label">Industries We Serve</div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+                <div class="flex items-center gap-3 px-4 py-3 rounded-lg bg-neutral-50 border border-neutral-100"><span class="text-xl">🏭</span><span class="text-sm font-medium text-neutral-700" data-i18n="ind1">Food Manufacturing</span></div>
+                <div class="flex items-center gap-3 px-4 py-3 rounded-lg bg-neutral-50 border border-neutral-100"><span class="text-xl">🧁</span><span class="text-sm font-medium text-neutral-700" data-i18n="ind2">Bakery</span></div>
+                <div class="flex items-center gap-3 px-4 py-3 rounded-lg bg-neutral-50 border border-neutral-100"><span class="text-xl">🥛</span><span class="text-sm font-medium text-neutral-700" data-i18n="ind3">Dairy</span></div>
+                <div class="flex items-center gap-3 px-4 py-3 rounded-lg bg-neutral-50 border border-neutral-100"><span class="text-xl">🧃</span><span class="text-sm font-medium text-neutral-700" data-i18n="ind4">Beverage</span></div>
+                <div class="flex items-center gap-3 px-4 py-3 rounded-lg bg-neutral-50 border border-neutral-100"><span class="text-xl">🍬</span><span class="text-sm font-medium text-neutral-700" data-i18n="ind5">Confectionery</span></div>
+                <div class="flex items-center gap-3 px-4 py-3 rounded-lg bg-neutral-50 border border-neutral-100"><span class="text-xl">🛒</span><span class="text-sm font-medium text-neutral-700" data-i18n="ind6">Retail / Private Label</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== QUALITY ==================== -->
+<section id="quality" class="py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="reveal">
+                <div class="text-xs font-semibold uppercase tracking-widest text-brand-600 mb-3" data-i18n="qual_label">Quality & Compliance</div>
+                <h2 class="text-3xl lg:text-4xl font-bold text-neutral-900 leading-tight mb-6" data-i18n="qual_title" data-i18n-html="true">Internationally Certified,<br><span class="font-serif italic font-normal text-brand-700">Rigorously Audited</span></h2>
+                <p class="text-neutral-500 leading-relaxed mb-8" data-i18n="qual_desc">Food safety and quality are non-negotiable. Our production processes are certified to the highest international standards, with regular third-party audits ensuring full compliance across our entire supply chain.</p>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4 p-4 bg-brand-50 rounded-lg border border-brand-100">
+                        <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-sm border border-brand-100 flex-shrink-0"><svg class="w-6 h-6 text-brand-700" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg></div>
+                        <div><div class="font-bold text-neutral-900 text-sm">FSSC 22000</div><div class="text-neutral-500 text-xs mt-0.5" data-i18n="cert_fssc">GFSI-benchmarked food safety management system</div></div>
+                    </div>
+                    <div class="flex items-center gap-4 p-4 bg-brand-50 rounded-lg border border-brand-100">
+                        <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-sm border border-brand-100 flex-shrink-0"><svg class="w-6 h-6 text-brand-700" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/></svg></div>
+                        <div><div class="font-bold text-neutral-900 text-sm" data-i18n="cert_org_name">Organic Certification</div><div class="text-neutral-500 text-xs mt-0.5" data-i18n="cert_org">Certified organic production for EU and international markets</div></div>
+                    </div>
+                    <div class="flex items-center gap-4 p-4 bg-neutral-50 rounded-lg border border-neutral-150">
+                        <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-sm border border-neutral-100 flex-shrink-0"><span class="font-bold text-brand-700 text-xs">HACCP</span></div>
+                        <div><div class="font-bold text-neutral-900 text-sm">HACCP</div><div class="text-neutral-500 text-xs mt-0.5" data-i18n="cert_haccp">Hazard Analysis & Critical Control Points system</div></div>
+                    </div>
+                    <div class="flex items-center gap-4 p-4 bg-neutral-50 rounded-lg border border-neutral-150">
+                        <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-sm border border-neutral-100 flex-shrink-0"><span class="font-bold text-brand-700 text-[10px]">SEDEX</span></div>
+                        <div><div class="font-bold text-neutral-900 text-sm">SEDEX / SMETA</div><div class="text-neutral-500 text-xs mt-0.5" data-i18n="cert_sedex">Ethical trade & responsible sourcing audit</div></div>
+                    </div>
+                    <div class="flex items-center gap-4 p-4 bg-neutral-50 rounded-lg border border-neutral-150">
+                        <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-sm border border-neutral-100 flex-shrink-0"><span class="font-bold text-brand-700 text-[10px]">K</span></div>
+                        <div><div class="font-bold text-neutral-900 text-sm">Kosher</div><div class="text-neutral-500 text-xs mt-0.5" data-i18n="cert_kosher">Kosher certified production lines</div></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Process -->
+            <div class="reveal">
+                <div class="bg-neutral-50 rounded-2xl border border-neutral-200 p-8 lg:p-10">
+                    <div class="text-xs font-semibold uppercase tracking-widest text-neutral-400 mb-8" data-i18n="proc_label">Our Process — Field to Delivery</div>
+                    <div class="space-y-0">
+                        <div class="flex gap-4"><div class="flex flex-col items-center"><div class="w-10 h-10 rounded-full bg-brand-600 text-white text-sm font-bold flex items-center justify-center flex-shrink-0">1</div><div class="w-px h-full bg-brand-200 my-2"></div></div><div class="pb-8"><div class="font-bold text-neutral-800" data-i18n="step1_title">Raw Material Sourcing</div><div class="text-neutral-500 text-sm mt-1" data-i18n="step1_desc">Hand-selected fruits from Kuršumlija's eco-certified orchards and partner farms across Serbia's prime growing regions.</div></div></div>
+                        <div class="flex gap-4"><div class="flex flex-col items-center"><div class="w-10 h-10 rounded-full bg-brand-600 text-white text-sm font-bold flex items-center justify-center flex-shrink-0">2</div><div class="w-px h-full bg-brand-200 my-2"></div></div><div class="pb-8"><div class="font-bold text-neutral-800" data-i18n="step2_title">Inspection & Sorting</div><div class="text-neutral-500 text-sm mt-1" data-i18n="step2_desc">Multi-stage quality inspection with automated and manual sorting to ensure only premium-grade fruit enters processing.</div></div></div>
+                        <div class="flex gap-4"><div class="flex flex-col items-center"><div class="w-10 h-10 rounded-full bg-brand-600 text-white text-sm font-bold flex items-center justify-center flex-shrink-0">3</div><div class="w-px h-full bg-brand-200 my-2"></div></div><div class="pb-8"><div class="font-bold text-neutral-800" data-i18n="step3_title">Processing & Packaging</div><div class="text-neutral-500 text-sm mt-1" data-i18n="step3_desc">Hot or cold processing under FSSC 22000 controls. IQF freezing, pasteurization, and aseptic packaging per product type.</div></div></div>
+                        <div class="flex gap-4"><div class="flex flex-col items-center"><div class="w-10 h-10 rounded-full bg-brand-600 text-white text-sm font-bold flex items-center justify-center flex-shrink-0">4</div><div class="w-px h-full bg-brand-200 my-2"></div></div><div class="pb-8"><div class="font-bold text-neutral-800" data-i18n="step4_title">Quality Assurance</div><div class="text-neutral-500 text-sm mt-1" data-i18n="step4_desc">Laboratory testing for microbiological safety, Brix levels, pH, and organoleptic properties before batch release.</div></div></div>
+                        <div class="flex gap-4"><div class="flex flex-col items-center"><div class="w-10 h-10 rounded-full bg-accent-500 text-white text-sm font-bold flex items-center justify-center flex-shrink-0">5</div></div><div><div class="font-bold text-neutral-800" data-i18n="step5_title">Global Logistics</div><div class="text-neutral-500 text-sm mt-1" data-i18n="step5_desc">Temperature-controlled storage and transportation to customers across Europe, North America, and the Middle East.</div></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== GLOBAL REACH ==================== -->
+<section id="exports" class="py-20 lg:py-28 bg-brand-950 text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-20" style="background: radial-gradient(ellipse at 70% 50%, rgba(45,110,45,0.3) 0%, transparent 60%);"></div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16 reveal">
+            <div class="text-xs font-semibold uppercase tracking-widest text-brand-400 mb-3" data-i18n="exp_label">Global Reach</div>
+            <h2 class="text-3xl lg:text-4xl font-bold leading-tight mb-4" data-i18n="exp_title" data-i18n-html="true">Exported to <span class="font-serif italic font-normal text-brand-200">15+ Countries</span> Worldwide</h2>
+            <p class="text-white/50 max-w-2xl mx-auto" data-i18n="exp_desc">Our fruit ingredients reach leading food manufacturers and distributors across three continents, with annual export volumes exceeding €5 million.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-4 mb-8 reveal">
+            <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                <div class="text-3xl font-bold text-white">15<span class="text-brand-300 text-xl">+</span></div>
+                <div class="text-sm font-semibold text-white/85 mt-2">Export markets</div>
+                <div class="text-xs text-white/40 mt-1">Established international B2B reach</div>
+            </div>
+            <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                <div class="text-3xl font-bold text-white">3</div>
+                <div class="text-sm font-semibold text-white/85 mt-2">Continents served</div>
+                <div class="text-xs text-white/40 mt-1">Europe, North America and the Middle East</div>
+            </div>
+            <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                <div class="text-3xl font-bold text-white">€5M<span class="text-brand-300 text-xl">+</span></div>
+                <div class="text-sm font-semibold text-white/85 mt-2">Annual exports</div>
+                <div class="text-xs text-white/40 mt-1">Commercial experience in international food supply</div>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 reveal">
+            <div class="bg-white/5 border border-white/10 rounded-lg px-4 py-3 flex items-center gap-3 hover:bg-white/10 transition-colors"><span class="text-xl">🇺🇸</span><span class="text-sm font-medium text-white/80" data-i18n="c_usa">USA</span></div>
+            <div class="bg-white/5 border border-white/10 rounded-lg px-4 py-3 flex items-center gap-3 hover:bg-white/10 transition-colors"><span class="text-xl">🇩🇪</span><span class="text-sm font-medium text-white/80" data-i18n="c_de">Germany</span></div>
+            <div class="bg-white/5 border border-white/10 rounded-lg px-4 py-3 flex items-center gap-3 hover:bg-white/10 transition-colors"><span class="text-xl">🇫🇷</span><span class="text-sm font-medium text-white/80" data-i18n="c_fr">France</span></div>
+            <div class="bg-white/5 border border-white/10 rounded-lg px-4 py-3 flex items-center gap-3 hover:bg-white/10 transition-colors"><span class="text-xl">🇬🇧</span><span class="text-sm font-medium text-white/80" data-i18n="c_uk">United Kingdom</span></div>
+            <div class="bg-white/5 border border-white/10 rounded-lg px-4 py-3 flex items-center gap-3 hover:bg-white/10 transition-colors"><span class="text-xl">🇧🇪</span><span class="text-sm font-medium text-white/80" data-i18n="c_be">Belgium</span></div>
+            <div class="bg-white/5 border border-white/10 rounded-lg px-4 py-3 flex items-center gap-3 hover:bg-white/10 transition-colors"><span class="text-xl">🇮🇹</span><span class="text-sm font-medium text-white/80" data-i18n="c_it">Italy</span></div>
+            <div class="bg-white/5 border border-white/10 rounded-lg px-4 py-3 flex items-center gap-3 hover:bg-white/10 transition-colors"><span class="text-xl">🇵🇱</span><span class="text-sm font-medium text-white/80" data-i18n="c_pl">Poland</span></div>
+            <div class="bg-white/5 border border-white/10 rounded-lg px-4 py-3 flex items-center gap-3 hover:bg-white/10 transition-colors"><span class="text-xl">🇨🇾</span><span class="text-sm font-medium text-white/80" data-i18n="c_cy">Cyprus</span></div>
+            <div class="bg-white/5 border border-white/10 rounded-lg px-4 py-3 flex items-center gap-3 hover:bg-white/10 transition-colors"><span class="text-xl">🇬🇷</span><span class="text-sm font-medium text-white/80" data-i18n="c_gr">Greece</span></div>
+            <div class="bg-white/5 border border-white/10 rounded-lg px-4 py-3 flex items-center gap-3 hover:bg-white/10 transition-colors"><span class="text-xl">🇲🇰</span><span class="text-sm font-medium text-white/80" data-i18n="c_mk">North Macedonia</span></div>
+        </div>
+        <div class="mt-12 text-center reveal">
+            <p class="text-white/45 text-sm mb-4">International sales &amp; trade presence</p>
+            <div class="inline-flex items-center gap-6 bg-white/5 border border-white/10 rounded-xl px-8 py-4 flex-wrap justify-center">
+                <div class="text-center"><div class="font-bold text-white text-sm">Europe</div><div class="text-white/40 text-xs">Established export markets</div></div>
+                <div class="w-px h-8 bg-white/10 hidden sm:block"></div>
+                <div class="text-center"><div class="font-bold text-white text-sm">North America</div><div class="text-white/40 text-xs">B2B ingredient supply</div></div>
+                <div class="w-px h-8 bg-white/10 hidden sm:block"></div>
+                <div class="text-center"><div class="font-bold text-white text-sm">Middle East</div><div class="text-white/40 text-xs">Growing commercial reach</div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SUSTAINABILITY ==================== -->
+<section id="sustainability" class="py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="order-2 lg:order-1 reveal">
+                <div class="bg-brand-50 rounded-2xl p-8 lg:p-10 border border-brand-100 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-48 h-48 bg-brand-100/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+                    <div class="relative z-10 grid grid-cols-2 gap-6">
+                        <div class="bg-white rounded-xl p-5 shadow-sm border border-brand-100"><div class="text-3xl mb-3">🌿</div><div class="font-bold text-neutral-800 text-sm" data-i18n="sus1_title">Ecological Sourcing</div><div class="text-neutral-500 text-xs mt-1.5 leading-relaxed" data-i18n="sus1_desc">Raw materials from Kuršumlija's protected eco-region</div></div>
+                        <div class="bg-white rounded-xl p-5 shadow-sm border border-brand-100"><div class="text-3xl mb-3">♻️</div><div class="font-bold text-neutral-800 text-sm" data-i18n="sus2_title">Waste Reduction</div><div class="text-neutral-500 text-xs mt-1.5 leading-relaxed" data-i18n="sus2_desc">Maximizing yield from every harvest through optimized processing</div></div>
+                        <div class="bg-white rounded-xl p-5 shadow-sm border border-brand-100"><div class="text-3xl mb-3">🤝</div><div class="font-bold text-neutral-800 text-sm" data-i18n="sus3_title">SEDEX Compliant</div><div class="text-neutral-500 text-xs mt-1.5 leading-relaxed" data-i18n="sus3_desc">Ethical labor practices verified through SMETA audits</div></div>
+                        <div class="bg-white rounded-xl p-5 shadow-sm border border-brand-100"><div class="text-3xl mb-3">🏡</div><div class="font-bold text-neutral-800 text-sm" data-i18n="sus4_title">Local Communities</div><div class="text-neutral-500 text-xs mt-1.5 leading-relaxed" data-i18n="sus4_desc">Supporting 120+ jobs and regional farming communities</div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="order-1 lg:order-2 reveal">
+                <div class="text-xs font-semibold uppercase tracking-widest text-brand-600 mb-3" data-i18n="sus_label">Sustainability</div>
+                <h2 class="text-3xl lg:text-4xl font-bold text-neutral-900 leading-tight mb-6" data-i18n="sus_title" data-i18n-html="true">Committed to<br><span class="font-serif italic font-normal text-brand-700">Responsible Production</span></h2>
+                <p class="text-neutral-500 leading-relaxed mb-6" data-i18n="sus_p1">Sustainability is embedded in our operations — from sourcing raw materials in Serbia's protected ecological regions to maintaining ethical labor practices verified through SEDEX/SMETA audits.</p>
+                <p class="text-neutral-500 leading-relaxed" data-i18n="sus_p2">As a family-founded company with deep roots in the local community, we understand the importance of responsible growth. Our organic-certified production lines support the global shift toward cleaner labels and environmentally conscious food manufacturing.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== CONTACT ==================== -->
+<section id="contact" class="py-20 lg:py-28 bg-neutral-50 grid-pattern">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid lg:grid-cols-5 gap-12">
+            <div class="lg:col-span-2 reveal">
+                <div class="text-xs font-semibold uppercase tracking-widest text-brand-600 mb-3" data-i18n="con_label">Contact Us</div>
+                <h2 class="text-3xl lg:text-4xl font-bold text-neutral-900 leading-tight mb-6" data-i18n="con_title" data-i18n-html="true">Request a Quote or<br>Product Information</h2>
+                <p class="text-neutral-500 leading-relaxed mb-8" data-i18n="con_desc">Whether you need technical specs, samples, or pricing for a specific product — our commercial team is ready to help.</p>
+                <div class="space-y-5">
+                    <div class="flex items-start gap-3">
+                        <div class="w-9 h-9 rounded-lg bg-brand-100 flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-4 h-4 text-brand-700" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 0h.008v.008h-.008V7.5z"/></svg></div>
+                        <div><div class="font-semibold text-neutral-800 text-sm" data-i18n="con_hq_label">Headquarters</div><div class="text-neutral-500 text-sm mt-0.5">Ulica Mladih 4, 18000 Niš, Serbia</div></div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-9 h-9 rounded-lg bg-brand-100 flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-4 h-4 text-brand-700" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg></div>
+                        <div><div class="font-semibold text-neutral-800 text-sm" data-i18n="con_phone_label">Phone</div><div class="text-neutral-500 text-sm mt-0.5">+381 18 259 044 &nbsp;|&nbsp; +381 63 657 099</div></div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-9 h-9 rounded-lg bg-brand-100 flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-4 h-4 text-brand-700" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg></div>
+                        <div><div class="font-semibold text-neutral-800 text-sm">Email</div><div class="text-neutral-500 text-sm mt-0.5">frigonais@gmail.com</div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:col-span-3 reveal">
+                <form id="contactForm" class="bg-white rounded-2xl border border-neutral-200 p-8 shadow-sm" novalidate>
+                    <input type="text" name="website" tabindex="-1" autocomplete="off" class="sr-only" aria-hidden="true">
+                    <div class="grid sm:grid-cols-2 gap-5">
+                        <div><label class="text-sm font-medium text-neutral-700 mb-1.5 block" data-i18n="form_name">Full Name <span class="text-accent-500">*</span></label><input type="text" name="name" autocomplete="name" required data-i18n-placeholder="form_name_ph" placeholder="Your full name" class="w-full border border-neutral-200 rounded-lg px-4 py-2.5 text-sm transition-all"></div>
+                        <div><label class="text-sm font-medium text-neutral-700 mb-1.5 block" data-i18n="form_company">Company <span class="text-accent-500">*</span></label><input type="text" name="company" autocomplete="organization" required data-i18n-placeholder="form_company_ph" placeholder="Company name" class="w-full border border-neutral-200 rounded-lg px-4 py-2.5 text-sm transition-all"></div>
+                        <div><label class="text-sm font-medium text-neutral-700 mb-1.5 block">Email <span class="text-accent-500">*</span></label><input type="email" name="email" autocomplete="email" required placeholder="business@company.com" class="w-full border border-neutral-200 rounded-lg px-4 py-2.5 text-sm transition-all"></div>
+                        <div><label class="text-sm font-medium text-neutral-700 mb-1.5 block" data-i18n="form_phone">Phone</label><input type="tel" name="phone" autocomplete="tel" placeholder="+381 ..." class="w-full border border-neutral-200 rounded-lg px-4 py-2.5 text-sm transition-all"></div>
+                    </div>
+                    <div class="grid sm:grid-cols-2 gap-5 mt-5">
+                        <div><label class="text-sm font-medium text-neutral-700 mb-1.5 block" data-i18n="form_interest">Product Interest</label>
+                            <select name="product" class="w-full border border-neutral-200 rounded-lg px-4 py-2.5 text-sm text-neutral-500 transition-all appearance-none bg-white cursor-pointer" id="productSelect">
+                                <option value="" data-i18n="form_select">Select a product</option>
+                                <option data-i18n="p1_name">IQF Frozen Fruit</option>
+                                <option data-i18n="p2_name">Jams & Fruit Spreads</option>
+                                <option data-i18n="p3_name">Fruit Purées</option>
+                                <option data-i18n="p4_name">Thermostable Mass</option>
+                                <option data-i18n="p5_name">Fruit Yogurt Preparations</option>
+                                <option data-i18n="p6_name">Fruit Fillings</option>
+                                <option data-i18n="form_custom">Custom Formulation</option>
+                            </select>
+                        </div>
+                        <div><label class="text-sm font-medium text-neutral-700 mb-1.5 block" data-i18n="form_volume">Estimated Volume</label>
+                            <select name="volume" class="w-full border border-neutral-200 rounded-lg px-4 py-2.5 text-sm text-neutral-500 transition-all appearance-none bg-white cursor-pointer">
+                                <option value="" data-i18n="form_vol_sel">Select volume range</option>
+                                <option data-i18n="vol1">Under 1 tonne</option>
+                                <option data-i18n="vol2">1–10 tonnes</option>
+                                <option data-i18n="vol3">10–50 tonnes</option>
+                                <option data-i18n="vol4">50–100 tonnes</option>
+                                <option data-i18n="vol5">100+ tonnes</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mt-5"><label class="text-sm font-medium text-neutral-700 mb-1.5 block" data-i18n="form_msg">Message</label><textarea name="message" rows="4" data-i18n-placeholder="form_msg_ph" placeholder="Tell us about your requirements, desired specifications, or any questions..." class="w-full border border-neutral-200 rounded-lg px-4 py-2.5 text-sm transition-all resize-none"></textarea></div>
+                    <div id="formStatus" class="form-status text-sm rounded-lg px-4 py-3 mt-5" role="status" aria-live="polite" hidden></div>
+                    <div class="flex items-center justify-between mt-6 gap-4 flex-wrap">
+                        <p class="text-xs text-neutral-400" data-i18n="form_note">We typically respond within 1–2 business days.</p>
+                        <button type="submit" class="submit-btn btn-primary text-white px-8 py-3 rounded-lg text-sm font-semibold flex items-center gap-2"><span data-i18n="form_submit">Submit Inquiry</span> <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/></svg></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== PRODUCT SPEC MODAL ==================== -->
+<div id="productModal" class="modal-shell fixed inset-0 z-[70] bg-black/55 p-4 sm:p-6 flex items-center justify-center" aria-hidden="true">
+    <div class="modal-card bg-white rounded-2xl shadow-2xl max-w-xl w-full max-h-[90vh] overflow-auto" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="flex items-start justify-between p-6 border-b border-neutral-100">
+            <div><div class="text-xs uppercase tracking-widest text-brand-600 font-semibold">Product information</div><h3 id="modalTitle" class="text-2xl font-bold text-neutral-900 mt-1">Product</h3></div>
+            <button id="modalClose" class="w-9 h-9 rounded-lg hover:bg-neutral-100 flex items-center justify-center" aria-label="Close product information">✕</button>
+        </div>
+        <div class="p-6">
+            <p id="modalDescription" class="text-neutral-600 leading-relaxed"></p>
+            <div id="modalFacts" class="grid sm:grid-cols-2 gap-3 mt-6"></div>
+            <div class="bg-brand-50 border border-brand-100 rounded-xl p-4 mt-6 text-sm text-neutral-600">Technical specifications, samples and formulation details are supplied by the commercial team for the requested application.</div>
+            <div class="flex flex-wrap gap-3 mt-6">
+                <button id="modalQuote" class="btn-primary text-white px-5 py-2.5 rounded-lg text-sm font-semibold">Request specs / quote</button>
+                <button id="modalDismiss" class="btn-outline px-5 py-2.5 rounded-lg text-sm font-semibold">Continue browsing</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="bg-neutral-900 text-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-14">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+            <div>
+                <a href="#top" class="inline-flex mb-4" aria-label="Frigonais home"><img src="assets/frigonais-logo-red-green.svg" class="brand-logo footer-logo" alt="Frigonais" width="230" height="52"></a>
+                <p class="text-neutral-500 text-sm leading-relaxed" data-i18n="footer_desc">Premium fruit ingredient supplier based in Niš, Serbia. Serving the global food industry since 1996.</p>
+            </div>
+            <div>
+                <div class="text-xs font-semibold uppercase tracking-widest text-neutral-500 mb-4" data-i18n="nav_products">Products</div>
+                <div class="space-y-2.5">
+                    <a href="products.html#iqf" class="block text-sm text-neutral-400 hover:text-white transition-colors" data-i18n="p1_name">IQF Frozen Fruit</a>
+                    <a href="products.html#jams" class="block text-sm text-neutral-400 hover:text-white transition-colors" data-i18n="p2_name">Jams & Spreads</a>
+                    <a href="products.html#purees" class="block text-sm text-neutral-400 hover:text-white transition-colors" data-i18n="p3_name">Fruit Purées</a>
+                    <a href="products.html#thermostable" class="block text-sm text-neutral-400 hover:text-white transition-colors" data-i18n="p4_name">Thermostable Mass</a>
+                    <a href="products.html#yogurt" class="block text-sm text-neutral-400 hover:text-white transition-colors" data-i18n="p5_name">Yogurt Preparations</a>
+                    <a href="products.html#fillings" class="block text-sm text-neutral-400 hover:text-white transition-colors" data-i18n="p6_name">Fruit Fillings</a>
+                </div>
+            </div>
+            <div>
+                <div class="text-xs font-semibold uppercase tracking-widest text-neutral-500 mb-4" data-i18n="footer_company">Company</div>
+                <div class="space-y-2.5">
+                    <a href="#about" class="block text-sm text-neutral-400 hover:text-white transition-colors" data-i18n="nav_about">About Us</a>
+                    <a href="#quality" class="block text-sm text-neutral-400 hover:text-white transition-colors" data-i18n="nav_quality">Quality & Certifications</a>
+                    <a href="#exports" class="block text-sm text-neutral-400 hover:text-white transition-colors" data-i18n="nav_global">Global Reach</a>
+                    <a href="#sustainability" class="block text-sm text-neutral-400 hover:text-white transition-colors" data-i18n="nav_sustain">Sustainability</a>
+                    <a href="#contact" class="block text-sm text-neutral-400 hover:text-white transition-colors" data-i18n="nav_contact">Contact</a>
+                </div>
+            </div>
+            <div>
+                <div class="text-xs font-semibold uppercase tracking-widest text-neutral-500 mb-4" data-i18n="nav_contact">Contact</div>
+                <div class="space-y-2.5 text-sm text-neutral-400">
+                    <p>Ulica Mladih 4<br>18000 Niš, Serbia</p>
+                    <p>+381 18 259 044<br>+381 63 657 099</p>
+                    <p>frigonais@gmail.com</p>
+                    <a href="https://www.frigonais.com" target="_blank" class="text-brand-400 hover:text-brand-300 transition-colors font-medium">www.frigonais.com</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="border-t border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-3">
+            <div class="text-neutral-600 text-xs">&copy; <span id="currentYear">2026</span> Frigonais D.O.O. Niš, Serbia. All rights reserved.</div>
+            <div class="flex items-center gap-4"><span class="text-neutral-600 text-xs">FSSC 22000 · Organic · HACCP · SEDEX · Kosher</span></div>
+        </div>
+    </div>
+</footer>
+
+<!-- ==================== i18n TRANSLATIONS & SCRIPTS ==================== -->
+<script>
+const translations = {
+en: {
+    // top
+    topbar_location: "Niš, Serbia", logo_sub: "Fruit Ingredients",
+    // nav
+    nav_about: "About", nav_products: "Products", nav_quality: "Quality & Certifications", nav_global: "Global Reach", nav_sustain: "Sustainability", nav_contact: "Contact", nav_quote: "Request a Quote", mob_menu: "Menu",
+    // dropdown
+    dd_range: "Product Range", dd_frozen_sub: "IQF berries & stone fruit", dd_jam_sub: "Traditional & industrial", dd_puree_sub: "For dairy, bakery & beverage", dd_view_all: "View All Products →", view_all_products: "View All Products",
+    // hero
+    hero_badge: "Trusted B2B Fruit Ingredient Supplier",
+    hero_title: 'Fruit Ingredients from Serbia,<br><span class="font-serif italic font-normal text-brand-200">Built for Global Food Production</span>',
+    hero_desc: "IQF frozen fruit, fruit purées, jams, thermostable fillings and custom preparations for food manufacturers across 15+ international markets.",
+    hero_cta1: "Explore Our Products", hero_cta2: "Request a Quote",
+    hero_glance: "Company at a Glance", stat_est: "Established", stat_emp: "Employees", stat_exp: "Annual Exports", stat_mkt: "Export Markets",
+    hero_hq: "Headquartered in Niš, Serbia", hero_prod: "Production in Kuršumlija eco-region",
+    // about
+    about_label: "About Frigonais",
+    about_title: 'Nearly Three Decades of<br><span class="font-serif italic font-normal text-brand-700">Fruit Processing Excellence</span>',
+    about_p1: "Founded in 1996 as a family enterprise, Frigonais has grown into one of Serbia's leading fruit processing companies with over 120 employees and a global reach spanning three continents.",
+    about_p2: "Our headquarters are based in Niš, while production facilities are strategically located in the Kuršumlija spa region — an ecologically pristine area renowned for its exceptional fruit-growing conditions. This unique terroir provides the foundation for our premium-quality raw materials.",
+    about_p3: "Through both hot and cold processing methods, we transform locally sourced fruits into a comprehensive range of B2B ingredients: frozen fruit (IQF), jams, fruit purées, thermostable masses, yogurt fruit preparations, and custom fruit fillings — serving food manufacturers, bakeries, dairies, and distributors worldwide.",
+    diff1_title: "Strategic Location", diff1_desc: "Production in Serbia's prime fruit-growing Kuršumlija eco-region, ensuring direct access to premium raw materials.",
+    diff2_title: "Dual Processing", diff2_desc: "State-of-the-art hot and cold processing lines enabling frozen, ambient, and heat-stable product formats.",
+    diff3_title: "Global Export Network", diff3_desc: "Serving 15+ countries across North America, Europe, and the Middle East with €5M+ in annual exports.",
+    diff4_title: "Custom Formulations", diff4_desc: "Tailored fruit preparations developed to meet your specific product specifications and application needs.",
+    // products
+    prod_label: "Product Range", prod_title: "Comprehensive Fruit Ingredient Solutions",
+    prod_desc: "Our product portfolio covers the full spectrum of processed fruit ingredients — from IQF frozen fruit to heat-stable bakery fillings — all produced to the highest international quality standards.",
+    tag_cold: "Cold Processing", tag_hot: "Hot Processing", tag_spec: "Specialty", tag_dairy: "Dairy", tag_custom: "Custom",
+    p1_name: "IQF Frozen Fruit", p1_desc: "Individually Quick Frozen cherries, raspberries, strawberries, blackberries, and blueberries. Preserves peak freshness, nutrition, and natural flavor profile.",
+    p2_name: "Jams & Fruit Spreads", p2_desc: "Industrial-scale fruit jams and spreads produced with traditional recipes and modern technology. For bakery, dairy, and retail applications.",
+    p3_name: "Fruit Purées", p3_desc: "Smooth, consistent purées optimized for the beverage, dairy, and confectionery industries. Single-fruit and blended formats available.",
+    p4_name: "Thermostable Mass", p4_desc: "Heat-resistant fruit preparations engineered for baking applications. Maintains shape, color, and flavor through high-temperature processing cycles.",
+    p5_name: "Fruit Yogurt Preparations", p5_desc: "Specially formulated fruit bases optimized for integration with yogurt, quark, and other dairy products. Custom Brix and viscosity to specification.",
+    p6_name: "Fruit Fillings", p6_desc: "Versatile fruit fillings for pastries, croissants, doughnuts, and confections. Formulated to your exact recipe, texture, and taste specifications.",
+    tag_cherry: "Cherry", tag_raspberry: "Raspberry", tag_strawberry: "Strawberry", tag_blackberry: "Blackberry",
+    req_specs: "Request Specs",
+    ind_label: "Industries We Serve", ind1: "Food Manufacturing", ind2: "Bakery", ind3: "Dairy", ind4: "Beverage", ind5: "Confectionery", ind6: "Retail / Private Label",
+    // quality
+    qual_label: "Quality & Compliance",
+    qual_title: 'Internationally Certified,<br><span class="font-serif italic font-normal text-brand-700">Rigorously Audited</span>',
+    qual_desc: "Food safety and quality are non-negotiable. Our production processes are certified to the highest international standards, with regular third-party audits ensuring full compliance across our entire supply chain.",
+    cert_fssc: "GFSI-benchmarked food safety management system", cert_org_name: "Organic Certification", cert_org: "Certified organic production for EU and international markets",
+    cert_haccp: "Hazard Analysis & Critical Control Points system", cert_sedex: "Ethical trade & responsible sourcing audit", cert_kosher: "Kosher certified production lines",
+    proc_label: "Our Process — Field to Delivery",
+    step1_title: "Raw Material Sourcing", step1_desc: "Hand-selected fruits from Kuršumlija's eco-certified orchards and partner farms across Serbia's prime growing regions.",
+    step2_title: "Inspection & Sorting", step2_desc: "Multi-stage quality inspection with automated and manual sorting to ensure only premium-grade fruit enters processing.",
+    step3_title: "Processing & Packaging", step3_desc: "Hot or cold processing under FSSC 22000 controls. IQF freezing, pasteurization, and aseptic packaging per product type.",
+    step4_title: "Quality Assurance", step4_desc: "Laboratory testing for microbiological safety, Brix levels, pH, and organoleptic properties before batch release.",
+    step5_title: "Global Logistics", step5_desc: "Temperature-controlled storage and transportation to customers across Europe, North America, and the Middle East.",
+    // exports
+    exp_label: "Global Reach",
+    exp_title: 'Exported to <span class="font-serif italic font-normal text-brand-200">15+ Countries</span> Worldwide',
+    exp_desc: "Our fruit ingredients reach leading food manufacturers and distributors across three continents, with annual export volumes exceeding €5 million.",
+    c_usa: "USA", c_de: "Germany", c_fr: "France", c_uk: "United Kingdom", c_be: "Belgium", c_it: "Italy", c_pl: "Poland", c_cy: "Cyprus", c_gr: "Greece", c_mk: "North Macedonia",
+    exp_fairs: "Find us at international trade exhibitions", fair_dubai: "Dubai, UAE", fair_riyadh: "Riyadh, KSA", fair_bg: "Belgrade, SRB",
+    // sustainability
+    sus_label: "Sustainability",
+    sus_title: 'Committed to<br><span class="font-serif italic font-normal text-brand-700">Responsible Production</span>',
+    sus_p1: "Sustainability is embedded in our operations — from sourcing raw materials in Serbia's protected ecological regions to maintaining ethical labor practices verified through SEDEX/SMETA audits.",
+    sus_p2: "As a family-founded company with deep roots in the local community, we understand the importance of responsible growth. Our organic-certified production lines support the global shift toward cleaner labels and environmentally conscious food manufacturing.",
+    sus1_title: "Ecological Sourcing", sus1_desc: "Raw materials from Kuršumlija's protected eco-region",
+    sus2_title: "Waste Reduction", sus2_desc: "Maximizing yield from every harvest through optimized processing",
+    sus3_title: "SEDEX Compliant", sus3_desc: "Ethical labor practices verified through SMETA audits",
+    sus4_title: "Local Communities", sus4_desc: "Supporting 120+ jobs and regional farming communities",
+    // contact / form
+    con_label: "Contact Us",
+    con_title: 'Request a Quote or<br>Product Information',
+    con_desc: "Whether you need technical specs, samples, or pricing for a specific product — our commercial team is ready to help.",
+    con_hq_label: "Headquarters", con_phone_label: "Phone",
+    form_name: 'Full Name <span class="text-accent-500">*</span>', form_name_ph: "Your full name",
+    form_company: 'Company <span class="text-accent-500">*</span>', form_company_ph: "Company name",
+    form_phone: "Phone", form_interest: "Product Interest", form_select: "Select a product", form_custom: "Custom Formulation",
+    form_volume: "Estimated Volume", form_vol_sel: "Select volume range",
+    vol1: "Under 1 tonne", vol2: "1–10 tonnes", vol3: "10–50 tonnes", vol4: "50–100 tonnes", vol5: "100+ tonnes",
+    form_msg: "Message", form_msg_ph: "Tell us about your requirements, desired specifications, or any questions...",
+    form_note: "We typically respond within 1–2 business days.", form_submit: "Submit Inquiry", form_sent: "Inquiry Sent",
+    // footer
+    footer_desc: "Premium fruit ingredient supplier based in Niš, Serbia. Serving the global food industry since 1996.",
+    footer_company: "Company", footer_copy: "© 2026 Frigonais D.O.O. Niš, Serbia. All rights reserved.",
+},
+sr: {
+    topbar_location: "Niš, Srbija", logo_sub: "Voćni Sastojci",
+    nav_about: "O nama", nav_products: "Proizvodi", nav_quality: "Kvalitet i Sertifikati", nav_global: "Globalno Prisustvo", nav_sustain: "Održivost", nav_contact: "Kontakt", nav_quote: "Zatražite Ponudu", mob_menu: "Meni",
+    dd_range: "Asortiman Proizvoda", dd_frozen_sub: "IQF bobičasto i koštunjavo voće", dd_jam_sub: "Tradicionalno i industrijsko", dd_puree_sub: "Za mlečnu, pekarsku i industriju pića", dd_view_all: "Svi Proizvodi →", view_all_products: "Pogledajte Sve Proizvode",
+    hero_badge: "Pouzdan B2B Dobavljač Voćnih Sastojaka",
+    hero_title: 'Premijum Voćni<br>Sastojci za<br><span class="font-serif italic font-normal text-brand-200">Globalnu Prehrambenu Industriju</span>',
+    hero_desc: "Od smrznutog bobičastog voća do voćnih pirea i pekarskih punjenja — snabdevamo sertifikovanim, visokokvalitetnim prerađenim voćnim sastojcima proizvođače u više od 15 zemalja.",
+    hero_cta1: "Istražite Proizvode", hero_cta2: "Zatražite Ponudu",
+    hero_glance: "Kompanija Ukratko", stat_est: "Osnovana", stat_emp: "Zaposlenih", stat_exp: "Godišnji Izvoz", stat_mkt: "Izvozna Tržišta",
+    hero_hq: "Sedište u Nišu, Srbija", hero_prod: "Proizvodnja u eko-regionu Kuršumlija",
+    about_label: "O Frigonais-u",
+    about_title: 'Skoro Tri Decenije<br><span class="font-serif italic font-normal text-brand-700">Izvrsnosti u Preradi Voća</span>',
+    about_p1: "Osnovan 1996. godine kao porodično preduzeće, Frigonais je izrastao u jednu od vodećih kompanija za preradu voća u Srbiji sa preko 120 zaposlenih i globalnim prisustvom na tri kontinenta.",
+    about_p2: "Sedište kompanije je u Nišu, dok se proizvodni pogoni nalaze u banjskom području Kuršumlije — ekološki čistom regionu poznatom po izuzetnim uslovima za uzgoj voća. Ovaj jedinstveni terroir pruža osnovu za naše prvoklasne sirovine.",
+    about_p3: "Kroz postupke tople i hladne prerade, lokalno nabavljeno voće transformišemo u sveobuhvatan asortiman B2B sastojaka: smrznuto voće (IQF), džemove, voćne piree, termostabilne mase, voćne preparate za jogurt i punjenja po meri — za proizvođače hrane, pekare, mlekare i distributere širom sveta.",
+    diff1_title: "Strateška Lokacija", diff1_desc: "Proizvodnja u premijum eko-regionu Kuršumlija, sa direktnim pristupom visokokvalitetnim sirovinama.",
+    diff2_title: "Dvojna Prerada", diff2_desc: "Najsavremenije linije za toplu i hladnu preradu koje omogućavaju smrznute, ambijentalne i termostabilne formate.",
+    diff3_title: "Globalna Izvozna Mreža", diff3_desc: "Snabdevamo 15+ zemalja u Severnoj Americi, Evropi i Bliskom Istoku sa godišnjim izvozom od €5M+.",
+    diff4_title: "Prilagođene Formulacije", diff4_desc: "Voćni preparati razvijeni prema vašim specifičnim specifikacijama proizvoda i potrebama primene.",
+    prod_label: "Asortiman Proizvoda", prod_title: "Sveobuhvatna Rešenja od Voćnih Sastojaka",
+    prod_desc: "Naš portfolio proizvoda pokriva pun spektar prerađenih voćnih sastojaka — od IQF smrznutog voća do termostabilnih pekarskih punjenja — proizvedenih prema najvišim međunarodnim standardima kvaliteta.",
+    tag_cold: "Hladna Prerada", tag_hot: "Topla Prerada", tag_spec: "Specijalni", tag_dairy: "Mlečni", tag_custom: "Po Meri",
+    p1_name: "IQF Smrznuto Voće", p1_desc: "Pojedinačno brzo smrznute trešnje, maline, jagode, kupine i borovnice. Čuva vrhunsku svežinu, nutritivnu vrednost i prirodni profil ukusa.",
+    p2_name: "Džemovi i Voćni Namazi", p2_desc: "Voćni džemovi i namazi industrijskog obima proizvedeni tradicionalnim recepturama i modernom tehnologijom. Za pekarske, mlečne i maloprodajne primene.",
+    p3_name: "Voćni Pirei", p3_desc: "Glatki, konzistentni pirei optimizovani za industriju pića, mlečnu i konditorsku industriju. Dostupni u formatima od jednog voća i mešavina.",
+    p4_name: "Termostabilna Masa", p4_desc: "Termootporni voćni preparati projektovani za pekarske primene. Održava oblik, boju i ukus kroz cikluse obrade na visokim temperaturama.",
+    p5_name: "Voćni Preparati za Jogurt", p5_desc: "Specijalno formulisane voćne baze optimizovane za integraciju sa jogurtom, kvarkom i drugim mlečnim proizvodima. Brix i viskozitet prema specifikaciji.",
+    p6_name: "Voćna Punjenja", p6_desc: "Raznovrsna voćna punjenja za peciva, kroasane, krofne i konditorske proizvode. Formulisana prema vašoj tačnoj recepturi, teksturi i ukusu.",
+    tag_cherry: "Trešnja", tag_raspberry: "Malina", tag_strawberry: "Jagoda", tag_blackberry: "Kupina",
+    req_specs: "Zatražite Specifikacije",
+    ind_label: "Industrije Koje Snabdevamo", ind1: "Prehrambena Industrija", ind2: "Pekarstvo", ind3: "Mlekarstvo", ind4: "Industrija Pića", ind5: "Konditorstvo", ind6: "Maloprodaja / Privatne Marke",
+    qual_label: "Kvalitet i Usklađenost",
+    qual_title: 'Međunarodno Sertifikovani,<br><span class="font-serif italic font-normal text-brand-700">Rigorozno Kontrolisani</span>',
+    qual_desc: "Bezbednost i kvalitet hrane su neupitni. Naši proizvodni procesi su sertifikovani prema najvišim međunarodnim standardima, sa redovnim revizijama nezavisnih strana.",
+    cert_fssc: "GFSI sistem upravljanja bezbednošću hrane", cert_org_name: "Organski Sertifikat", cert_org: "Sertifikovana organska proizvodnja za EU i međunarodna tržišta",
+    cert_haccp: "Analiza hazarda i kritičnih kontrolnih tačaka", cert_sedex: "Revizija etičke trgovine i odgovornog nabavke", cert_kosher: "Košer sertifikovane proizvodne linije",
+    proc_label: "Naš Proces — Od Polja do Isporuke",
+    step1_title: "Nabavka Sirovina", step1_desc: "Ručno odabrano voće iz eko-sertifikovanih voćnjaka Kuršumlije i partnerskih farmi u premijum uzgojnim regionima Srbije.",
+    step2_title: "Inspekcija i Sortiranje", step2_desc: "Višestepena kontrola kvaliteta sa automatskim i ručnim sortiranjem kako bi samo voće premijum klase ušlo u preradu.",
+    step3_title: "Prerada i Pakovanje", step3_desc: "Topla ili hladna prerada pod FSSC 22000 kontrolama. IQF zamrzavanje, pasterizacija i aseptičko pakovanje prema tipu proizvoda.",
+    step4_title: "Osiguranje Kvaliteta", step4_desc: "Laboratorijsko testiranje mikrobiološke bezbednosti, Brix vrednosti, pH i organoleptičkih svojstava pre puštanja serije.",
+    step5_title: "Globalna Logistika", step5_desc: "Temperaturno kontrolisano skladištenje i transport do kupaca širom Evrope, Severne Amerike i Bliskog Istoka.",
+    exp_label: "Globalno Prisustvo",
+    exp_title: 'Izvoz u <span class="font-serif italic font-normal text-brand-200">15+ Zemalja</span> Širom Sveta',
+    exp_desc: "Naši voćni sastojci dopiru do vodećih proizvođača hrane i distributera na tri kontinenta, sa godišnjim obimom izvoza koji prelazi 5 miliona evra.",
+    c_usa: "SAD", c_de: "Nemačka", c_fr: "Francuska", c_uk: "Velika Britanija", c_be: "Belgija", c_it: "Italija", c_pl: "Poljska", c_cy: "Kipar", c_gr: "Grčka", c_mk: "Severna Makedonija",
+    exp_fairs: "Posetite nas na međunarodnim sajmovima", fair_dubai: "Dubai, UAE", fair_riyadh: "Rijad, KSA", fair_bg: "Beograd, SRB",
+    sus_label: "Održivost",
+    sus_title: 'Posvećeni<br><span class="font-serif italic font-normal text-brand-700">Odgovornoj Proizvodnji</span>',
+    sus_p1: "Održivost je ugrađena u naše poslovanje — od nabavke sirovina iz zaštićenih ekoloških regiona Srbije do održavanja etičkih radnih praksi verifikovanih SEDEX/SMETA revizijama.",
+    sus_p2: "Kao porodično osnovana kompanija sa dubokim korenima u lokalnoj zajednici, razumemo važnost odgovornog rasta. Naše organski sertifikovane proizvodne linije podržavaju globalni pomak ka čistijim deklaracijama i ekološki svesnoj proizvodnji hrane.",
+    sus1_title: "Ekološka Nabavka", sus1_desc: "Sirovine iz zaštićenog eko-regiona Kuršumlije",
+    sus2_title: "Smanjenje Otpada", sus2_desc: "Maksimizacija prinosa iz svake žetve kroz optimizovanu preradu",
+    sus3_title: "SEDEX Usklađenost", sus3_desc: "Etičke radne prakse verifikovane SMETA revizijama",
+    sus4_title: "Lokalne Zajednice", sus4_desc: "Podrška 120+ radnih mesta i regionalnih poljoprivrednih zajednica",
+    con_label: "Kontaktirajte Nas",
+    con_title: 'Zatražite Ponudu ili<br>Informacije o Proizvodima',
+    con_desc: "Bilo da su vam potrebne tehničke specifikacije, uzorci ili cene za određeni proizvod — naš komercijalni tim je tu da pomogne.",
+    con_hq_label: "Sedište", con_phone_label: "Telefon",
+    form_name: 'Ime i Prezime <span class="text-accent-500">*</span>', form_name_ph: "Vaše ime i prezime",
+    form_company: 'Kompanija <span class="text-accent-500">*</span>', form_company_ph: "Naziv kompanije",
+    form_phone: "Telefon", form_interest: "Proizvod od Interesa", form_select: "Izaberite proizvod", form_custom: "Prilagođena Formulacija",
+    form_volume: "Procenjeni Obim", form_vol_sel: "Izaberite opseg obima",
+    vol1: "Do 1 tone", vol2: "1–10 tona", vol3: "10–50 tona", vol4: "50–100 tona", vol5: "100+ tona",
+    form_msg: "Poruka", form_msg_ph: "Recite nam o vašim zahtevima, željenim specifikacijama ili pitanjima...",
+    form_note: "Obično odgovaramo u roku od 1–2 radna dana.", form_submit: "Pošaljite Upit", form_sent: "Upit Poslat",
+    footer_desc: "Premijum dobavljač voćnih sastojaka sa sedištem u Nišu, Srbija. U službi globalne prehrambene industrije od 1996.",
+    footer_company: "Kompanija", footer_copy: "© 2026 Frigonais D.O.O. Niš, Srbija. Sva prava zadržana.",
+},
+zh: {
+    topbar_location: "尼什，塞尔维亚", logo_sub: "水果原料",
+    nav_about: "关于我们", nav_products: "产品", nav_quality: "质量与认证", nav_global: "全球业务", nav_sustain: "可持续发展", nav_contact: "联系我们", nav_quote: "索取报价", mob_menu: "菜单",
+    dd_range: "产品系列", dd_frozen_sub: "IQF浆果及核果", dd_jam_sub: "传统与工业级", dd_puree_sub: "适用于乳制品、烘焙和饮料", dd_view_all: "查看全部产品 →", view_all_products: "查看全部产品",
+    hero_badge: "值得信赖的B2B水果原料供应商",
+    hero_title: '优质水果<br>原料，服务于<br><span class="font-serif italic font-normal text-brand-200">全球食品行业</span>',
+    hero_desc: "从冷冻浆果到果泥和烘焙馅料——我们为15+国家的制造商供应经过认证的高品质加工水果原料。",
+    hero_cta1: "探索我们的产品", hero_cta2: "索取报价",
+    hero_glance: "公司概览", stat_est: "创立年份", stat_emp: "员工人数", stat_exp: "年出口额", stat_mkt: "出口市场",
+    hero_hq: "总部位于塞尔维亚尼什", hero_prod: "生产基地位于库尔舒姆利亚生态区",
+    about_label: "关于Frigonais",
+    about_title: '近三十年<br><span class="font-serif italic font-normal text-brand-700">水果加工卓越品质</span>',
+    about_p1: "Frigonais创立于1996年，由家族企业发展成为塞尔维亚领先的水果加工企业之一，拥有120多名员工，业务覆盖三大洲。",
+    about_p2: "公司总部设在尼什，生产设施战略性地位于库尔舒姆利亚温泉地区——一个以卓越的水果种植条件闻名的生态原始区域。这一独特的风土为我们的优质原材料奠定了基础。",
+    about_p3: "通过热加工和冷加工方法，我们将本地采购的水果转化为全面的B2B原料系列：冷冻水果（IQF）、果酱、果泥、热稳定性果料、酸奶用果料制品及定制果馅——服务于全球的食品制造商、烘焙企业、乳品厂和分销商。",
+    diff1_title: "战略位置", diff1_desc: "生产基地位于塞尔维亚优质水果产区库尔舒姆利亚生态区，确保直接获取优质原材料。",
+    diff2_title: "双重加工", diff2_desc: "先进的热加工和冷加工生产线，支持冷冻、常温和耐热产品格式。",
+    diff3_title: "全球出口网络", diff3_desc: "服务北美、欧洲和中东15+国家，年出口额超过500万欧元。",
+    diff4_title: "定制配方", diff4_desc: "根据您的特定产品规格和应用需求开发定制水果制品。",
+    prod_label: "产品系列", prod_title: "全方位水果原料解决方案",
+    prod_desc: "我们的产品组合涵盖加工水果原料的完整系列——从IQF冷冻水果到耐热烘焙馅料——均按照最高国际质量标准生产。",
+    tag_cold: "冷加工", tag_hot: "热加工", tag_spec: "特种", tag_dairy: "乳制品", tag_custom: "定制",
+    p1_name: "IQF速冻水果", p1_desc: "单体速冻樱桃、覆盆子、草莓、黑莓和蓝莓。保留最佳新鲜度、营养价值和天然风味特征。",
+    p2_name: "果酱与果酱涂抹酱", p2_desc: "工业规模的果酱和涂抹酱，采用传统配方和现代技术生产。适用于烘焙、乳制品和零售应用。",
+    p3_name: "果泥", p3_desc: "为饮料、乳制品和糖果行业优化的顺滑、稳定果泥。提供单果和混合格式。",
+    p4_name: "热稳定性果料", p4_desc: "为烘焙应用设计的耐热水果制品。在高温加工过程中保持形状、颜色和风味。",
+    p5_name: "酸奶用果料制品", p5_desc: "专为与酸奶、夸克及其他乳制品集成而优化的特殊配方水果基料。可按规格定制白利度和粘度。",
+    p6_name: "水果馅料", p6_desc: "适用于糕点、牛角面包、甜甜圈和糖果的多功能水果馅料。按您的精确配方、质地和口味规格定制。",
+    tag_cherry: "樱桃", tag_raspberry: "覆盆子", tag_strawberry: "草莓", tag_blackberry: "黑莓",
+    req_specs: "索取规格",
+    ind_label: "我们服务的行业", ind1: "食品制造", ind2: "烘焙", ind3: "乳制品", ind4: "饮料", ind5: "糖果", ind6: "零售/自有品牌",
+    qual_label: "质量与合规",
+    qual_title: '国际认证，<br><span class="font-serif italic font-normal text-brand-700">严格审核</span>',
+    qual_desc: "食品安全和质量不容妥协。我们的生产流程通过最高国际标准认证，定期接受第三方审核以确保整个供应链的完全合规。",
+    cert_fssc: "GFSI基准食品安全管理体系", cert_org_name: "有机认证", cert_org: "面向欧盟和国际市场的有机生产认证",
+    cert_haccp: "危害分析与关键控制点体系", cert_sedex: "道德贸易与负责任采购审核", cert_kosher: "犹太洁食认证生产线",
+    proc_label: "我们的流程——从田间到交付",
+    step1_title: "原材料采购", step1_desc: "从库尔舒姆利亚生态认证果园和塞尔维亚优质种植区合作农场精选水果。",
+    step2_title: "检验与分选", step2_desc: "多级质量检验，自动和人工分选相结合，确保只有优质水果进入加工环节。",
+    step3_title: "加工与包装", step3_desc: "在FSSC 22000控制下进行热或冷加工。按产品类型进行IQF冷冻、巴氏灭菌和无菌包装。",
+    step4_title: "质量保证", step4_desc: "批次放行前进行微生物安全、白利度、pH值和感官特性的实验室检测。",
+    step5_title: "全球物流", step5_desc: "温控储存和运输，服务欧洲、北美和中东的客户。",
+    exp_label: "全球业务",
+    exp_title: '出口至全球<span class="font-serif italic font-normal text-brand-200">15+国家</span>',
+    exp_desc: "我们的水果原料供应三大洲领先的食品制造商和分销商，年出口总额超过500万欧元。",
+    c_usa: "美国", c_de: "德国", c_fr: "法国", c_uk: "英国", c_be: "比利时", c_it: "意大利", c_pl: "波兰", c_cy: "塞浦路斯", c_gr: "希腊", c_mk: "北马其顿",
+    exp_fairs: "在国际贸易展览会上找到我们", fair_dubai: "迪拜，阿联酋", fair_riyadh: "利雅得，沙特", fair_bg: "贝尔格莱德，塞尔维亚",
+    sus_label: "可持续发展",
+    sus_title: '致力于<br><span class="font-serif italic font-normal text-brand-700">负责任的生产</span>',
+    sus_p1: "可持续发展融入我们的运营——从在塞尔维亚受保护的生态区采购原材料到通过SEDEX/SMETA审核维护道德劳动实践。",
+    sus_p2: "作为一家根植于当地社区的家族创办企业，我们深知负责任增长的重要性。我们的有机认证生产线支持全球向更清洁标签和环保食品制造的转变。",
+    sus1_title: "生态采购", sus1_desc: "原材料来自库尔舒姆利亚受保护的生态区",
+    sus2_title: "减少浪费", sus2_desc: "通过优化加工最大化每次收获的产量",
+    sus3_title: "SEDEX合规", sus3_desc: "通过SMETA审核验证的道德劳动实践",
+    sus4_title: "当地社区", sus4_desc: "支持120+个就业岗位和区域农业社区",
+    con_label: "联系我们",
+    con_title: '索取报价或<br>产品信息',
+    con_desc: "无论您需要技术规格、样品还是特定产品的报价——我们的商务团队随时为您服务。",
+    con_hq_label: "总部", con_phone_label: "电话",
+    form_name: '姓名 <span class="text-accent-500">*</span>', form_name_ph: "您的全名",
+    form_company: '公司 <span class="text-accent-500">*</span>', form_company_ph: "公司名称",
+    form_phone: "电话", form_interest: "感兴趣的产品", form_select: "选择产品", form_custom: "定制配方",
+    form_volume: "预计数量", form_vol_sel: "选择数量范围",
+    vol1: "1吨以下", vol2: "1-10吨", vol3: "10-50吨", vol4: "50-100吨", vol5: "100+吨",
+    form_msg: "留言", form_msg_ph: "请告诉我们您的需求、期望的规格或任何问题...",
+    form_note: "我们通常在1-2个工作日内回复。", form_submit: "提交咨询", form_sent: "咨询已提交",
+    footer_desc: "总部位于塞尔维亚尼什的优质水果原料供应商。自1996年以来服务全球食品行业。",
+    footer_company: "公司", footer_copy: "© 2026 Frigonais D.O.O. 尼什，塞尔维亚。版权所有。",
+},
+ar: {
+    topbar_location: "نيش، صربيا", logo_sub: "مكونات الفاكهة",
+    nav_about: "من نحن", nav_products: "المنتجات", nav_quality: "الجودة والشهادات", nav_global: "الانتشار العالمي", nav_sustain: "الاستدامة", nav_contact: "اتصل بنا", nav_quote: "طلب عرض أسعار", mob_menu: "القائمة",
+    dd_range: "مجموعة المنتجات", dd_frozen_sub: "التوت والفواكه ذات النواة IQF", dd_jam_sub: "تقليدي وصناعي", dd_puree_sub: "للألبان والمخابز والمشروبات", dd_view_all: "عرض جميع المنتجات ←", view_all_products: "عرض جميع المنتجات",
+    hero_badge: "مورد موثوق لمكونات الفاكهة B2B",
+    hero_title: 'مكونات فاكهة<br>فاخرة لصناعة<br><span class="font-serif italic font-normal text-brand-200">الغذاء العالمية</span>',
+    hero_desc: "من التوت المجمد إلى هريس الفاكهة وحشوات المخابز — نورّد مكونات فاكهة معالجة معتمدة وعالية الجودة للمصنعين في أكثر من 15 دولة.",
+    hero_cta1: "استكشف منتجاتنا", hero_cta2: "طلب عرض أسعار",
+    hero_glance: "نظرة على الشركة", stat_est: "تأسست", stat_emp: "موظف", stat_exp: "الصادرات السنوية", stat_mkt: "أسواق التصدير",
+    hero_hq: "المقر الرئيسي في نيش، صربيا", hero_prod: "الإنتاج في منطقة كورشومليا البيئية",
+    about_label: "عن فريغونيس",
+    about_title: 'ما يقارب ثلاثة عقود من<br><span class="font-serif italic font-normal text-brand-700">التميز في معالجة الفاكهة</span>',
+    about_p1: "تأسست فريغونيس عام 1996 كمؤسسة عائلية، ونمت لتصبح واحدة من الشركات الرائدة في معالجة الفاكهة في صربيا مع أكثر من 120 موظفاً وانتشار عالمي يمتد عبر ثلاث قارات.",
+    about_p2: "يقع مقرنا الرئيسي في نيش، بينما تقع مرافق الإنتاج بشكل استراتيجي في منطقة كورشومليا — منطقة بيئية نقية تشتهر بظروف زراعة الفاكهة الاستثنائية. هذه التربة الفريدة توفر الأساس لمواردنا الخام عالية الجودة.",
+    about_p3: "من خلال طرق المعالجة الساخنة والباردة، نحول الفاكهة المحلية إلى مجموعة شاملة من مكونات B2B: الفاكهة المجمدة (IQF)، المربيات، هريس الفاكهة، الكتل المستقرة حرارياً، مستحضرات فاكهة الزبادي، وحشوات الفاكهة المخصصة — خدمةً لمصنعي الأغذية والمخابز والألبان والموزعين في جميع أنحاء العالم.",
+    diff1_title: "موقع استراتيجي", diff1_desc: "إنتاج في منطقة كورشومليا البيئية الرئيسية لزراعة الفاكهة في صربيا، مما يضمن الوصول المباشر للمواد الخام الممتازة.",
+    diff2_title: "معالجة مزدوجة", diff2_desc: "خطوط معالجة ساخنة وباردة حديثة تتيح تنسيقات المنتجات المجمدة والمحيطة والمستقرة حرارياً.",
+    diff3_title: "شبكة تصدير عالمية", diff3_desc: "خدمة أكثر من 15 دولة في أمريكا الشمالية وأوروبا والشرق الأوسط بصادرات سنوية تزيد عن 5 ملايين يورو.",
+    diff4_title: "تركيبات مخصصة", diff4_desc: "مستحضرات فاكهة مطورة لتلبية مواصفات منتجاتك واحتياجات التطبيق الخاصة بك.",
+    prod_label: "مجموعة المنتجات", prod_title: "حلول شاملة لمكونات الفاكهة",
+    prod_desc: "تغطي محفظة منتجاتنا كامل نطاق مكونات الفاكهة المعالجة — من الفاكهة المجمدة IQF إلى حشوات المخابز المستقرة حرارياً — جميعها منتجة وفق أعلى معايير الجودة الدولية.",
+    tag_cold: "معالجة باردة", tag_hot: "معالجة ساخنة", tag_spec: "متخصص", tag_dairy: "ألبان", tag_custom: "مخصص",
+    p1_name: "فاكهة مجمدة IQF", p1_desc: "كرز وتوت وفراولة وتوت أسود وتوت أزرق مجمد بشكل فردي سريع. يحافظ على أقصى درجات النضارة والقيمة الغذائية والنكهة الطبيعية.",
+    p2_name: "مربيات ومعاجين فواكه", p2_desc: "مربيات ومعاجين فواكه بمقياس صناعي منتجة بوصفات تقليدية وتكنولوجيا حديثة. للمخابز والألبان وتطبيقات البيع بالتجزئة.",
+    p3_name: "هريس الفاكهة", p3_desc: "هريس ناعم ومتسق محسّن لصناعات المشروبات والألبان والحلويات. متوفر بتنسيقات فاكهة واحدة ومزيج.",
+    p4_name: "كتلة مستقرة حرارياً", p4_desc: "مستحضرات فاكهة مقاومة للحرارة مصممة لتطبيقات الخبز. تحافظ على الشكل واللون والنكهة خلال دورات المعالجة بدرجات حرارة عالية.",
+    p5_name: "مستحضرات فاكهة الزبادي", p5_desc: "قواعد فاكهة مُصاغة خصيصاً ومحسّنة للتكامل مع الزبادي والكوارك ومنتجات الألبان الأخرى. بريكس ولزوجة مخصصة حسب المواصفات.",
+    p6_name: "حشوات الفاكهة", p6_desc: "حشوات فاكهة متعددة الاستخدامات للمعجنات والكرواسون والدونات والحلويات. مصاغة وفق وصفتك الدقيقة وملمسك ومواصفات الطعم.",
+    tag_cherry: "كرز", tag_raspberry: "توت", tag_strawberry: "فراولة", tag_blackberry: "توت أسود",
+    req_specs: "طلب المواصفات",
+    ind_label: "الصناعات التي نخدمها", ind1: "تصنيع الأغذية", ind2: "المخابز", ind3: "الألبان", ind4: "المشروبات", ind5: "الحلويات", ind6: "التجزئة / العلامة الخاصة",
+    qual_label: "الجودة والامتثال",
+    qual_title: 'معتمدة دولياً،<br><span class="font-serif italic font-normal text-brand-700">مراجعة بصرامة</span>',
+    qual_desc: "سلامة الغذاء والجودة أمران غير قابلين للتفاوض. عمليات إنتاجنا معتمدة وفق أعلى المعايير الدولية، مع عمليات تدقيق منتظمة من أطراف ثالثة.",
+    cert_fssc: "نظام إدارة سلامة الغذاء المعياري GFSI", cert_org_name: "شهادة عضوية", cert_org: "إنتاج عضوي معتمد للأسواق الأوروبية والدولية",
+    cert_haccp: "نظام تحليل المخاطر ونقاط التحكم الحرجة", cert_sedex: "تدقيق التجارة الأخلاقية والمصادر المسؤولة", cert_kosher: "خطوط إنتاج معتمدة كوشر",
+    proc_label: "عمليتنا — من الحقل إلى التسليم",
+    step1_title: "توريد المواد الخام", step1_desc: "فواكه مختارة يدوياً من بساتين كورشومليا المعتمدة بيئياً ومزارع الشركاء في مناطق الزراعة الرئيسية في صربيا.",
+    step2_title: "الفحص والفرز", step2_desc: "فحص جودة متعدد المراحل مع فرز آلي ويدوي لضمان دخول الفاكهة الممتازة فقط إلى المعالجة.",
+    step3_title: "المعالجة والتعبئة", step3_desc: "معالجة ساخنة أو باردة تحت ضوابط FSSC 22000. تجميد IQF، بسترة، وتعبئة معقمة حسب نوع المنتج.",
+    step4_title: "ضمان الجودة", step4_desc: "اختبار مختبري للسلامة الميكروبيولوجية، مستويات بريكس، الرقم الهيدروجيني، والخصائص الحسية قبل إصدار الدفعة.",
+    step5_title: "اللوجستيات العالمية", step5_desc: "تخزين ونقل بدرجة حرارة مضبوطة للعملاء في أوروبا وأمريكا الشمالية والشرق الأوسط.",
+    exp_label: "الانتشار العالمي",
+    exp_title: 'التصدير إلى <span class="font-serif italic font-normal text-brand-200">أكثر من 15 دولة</span> حول العالم',
+    exp_desc: "تصل مكونات الفاكهة لدينا إلى كبار مصنعي الأغذية والموزعين عبر ثلاث قارات، بأحجام تصدير سنوية تتجاوز 5 ملايين يورو.",
+    c_usa: "الولايات المتحدة", c_de: "ألمانيا", c_fr: "فرنسا", c_uk: "المملكة المتحدة", c_be: "بلجيكا", c_it: "إيطاليا", c_pl: "بولندا", c_cy: "قبرص", c_gr: "اليونان", c_mk: "مقدونيا الشمالية",
+    exp_fairs: "تجدنا في المعارض التجارية الدولية", fair_dubai: "دبي، الإمارات", fair_riyadh: "الرياض، السعودية", fair_bg: "بلغراد، صربيا",
+    sus_label: "الاستدامة",
+    sus_title: 'ملتزمون<br><span class="font-serif italic font-normal text-brand-700">بالإنتاج المسؤول</span>',
+    sus_p1: "الاستدامة متأصلة في عملياتنا — من توريد المواد الخام من مناطق صربيا البيئية المحمية إلى الحفاظ على ممارسات العمل الأخلاقية المُتحقق منها عبر تدقيقات SEDEX/SMETA.",
+    sus_p2: "كشركة أسستها عائلة بجذور عميقة في المجتمع المحلي، نحن نفهم أهمية النمو المسؤول. خطوط إنتاجنا المعتمدة عضوياً تدعم التحول العالمي نحو ملصقات أنظف وتصنيع غذائي واعٍ بيئياً.",
+    sus1_title: "مصادر بيئية", sus1_desc: "مواد خام من منطقة كورشومليا البيئية المحمية",
+    sus2_title: "تقليل النفايات", sus2_desc: "تعظيم العائد من كل حصاد عبر المعالجة المحسّنة",
+    sus3_title: "امتثال SEDEX", sus3_desc: "ممارسات عمل أخلاقية مُتحقق منها عبر تدقيقات SMETA",
+    sus4_title: "المجتمعات المحلية", sus4_desc: "دعم أكثر من 120 وظيفة ومجتمعات زراعية إقليمية",
+    con_label: "اتصل بنا",
+    con_title: 'طلب عرض أسعار أو<br>معلومات المنتج',
+    con_desc: "سواء كنت بحاجة إلى مواصفات تقنية أو عينات أو أسعار لمنتج معين — فريقنا التجاري جاهز للمساعدة.",
+    con_hq_label: "المقر الرئيسي", con_phone_label: "الهاتف",
+    form_name: 'الاسم الكامل <span class="text-accent-500">*</span>', form_name_ph: "اسمك الكامل",
+    form_company: 'الشركة <span class="text-accent-500">*</span>', form_company_ph: "اسم الشركة",
+    form_phone: "الهاتف", form_interest: "المنتج المطلوب", form_select: "اختر منتجاً", form_custom: "تركيبة مخصصة",
+    form_volume: "الحجم المقدر", form_vol_sel: "اختر نطاق الحجم",
+    vol1: "أقل من 1 طن", vol2: "1-10 أطنان", vol3: "10-50 طن", vol4: "50-100 طن", vol5: "+100 طن",
+    form_msg: "الرسالة", form_msg_ph: "أخبرنا عن متطلباتك والمواصفات المطلوبة أو أي استفسارات...",
+    form_note: "نرد عادةً خلال 1-2 يوم عمل.", form_submit: "إرسال الاستفسار", form_sent: "تم إرسال الاستفسار",
+    footer_desc: "مورد مكونات فاكهة فاخرة مقره في نيش، صربيا. نخدم صناعة الغذاء العالمية منذ عام 1996.",
+    footer_company: "الشركة", footer_copy: "© 2026 Frigonais D.O.O. نيش، صربيا. جميع الحقوق محفوظة.",
+}
+};
+
+let currentLang = 'en';
+
+function setLanguage(lang) {
+    currentLang = lang;
+    const t = translations[lang];
+    if (!t) return;
+
+    // Set dir and lang
+    const html = document.documentElement;
+    html.lang = lang;
+    html.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+    // Apply text translations
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) {
+            if (el.getAttribute('data-i18n-html') === 'true') {
+                el.innerHTML = t[key];
+            } else {
+                el.innerHTML = t[key];
+            }
+        }
+    });
+
+    // Placeholders
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (t[key]) el.placeholder = t[key];
+    });
+
+    // Update <select> option text
+    document.querySelectorAll('select option[data-i18n]').forEach(opt => {
+        const key = opt.getAttribute('data-i18n');
+        if (t[key]) opt.textContent = t[key];
+    });
+
+    // Update lang picker active states
+    document.querySelectorAll('.lang-option').forEach(opt => {
+        opt.classList.toggle('active', opt.getAttribute('data-lang') === lang);
+    });
+
+    // Update labels
+    const labelMap = { en: 'EN', sr: 'SR', zh: '中文', ar: 'عربي' };
+    document.querySelectorAll('.current-lang-label').forEach(el => el.textContent = labelMap[lang] || lang.toUpperCase());
+
+    // Close pickers
+    document.querySelectorAll('.lang-picker').forEach(p => p.classList.remove('open'));
+
+    // RTL arrow flip
+    document.querySelectorAll('.rtl\\:rotate-180').forEach(el => {
+        el.style.transform = lang === 'ar' ? 'rotate(180deg)' : '';
+    });
+
+    // Font
+    document.body.style.fontFamily = lang === 'zh' ? '"Noto Sans SC", "Plus Jakarta Sans", sans-serif'
+        : lang === 'ar' ? '"Noto Sans Arabic", "Plus Jakarta Sans", sans-serif'
+        : '"Plus Jakarta Sans", system-ui, sans-serif';
+}
+
+function toggleLangMenu(pickerId) {
+    const picker = document.getElementById(pickerId);
+    const isOpen = picker.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.lang-picker').forEach(p => p.classList.remove('open'));
+    if (!isOpen) picker.classList.add('open');
+}
+
+// Close lang pickers on outside click
+document.addEventListener('click', e => {
+    if (!e.target.closest('.lang-picker')) {
+        document.querySelectorAll('.lang-picker').forEach(p => p.classList.remove('open'));
+    }
+});
+
+// ============ Existing functionality ============
+// Scroll reveal
+const els = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+els.forEach(el => observer.observe(el));
+
+// Sep line
+const seps = document.querySelectorAll('.sep-line');
+const sepObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
+}, { threshold: 0.5 });
+seps.forEach(s => sepObs.observe(s));
+
+// Mobile menu
+const toggle = document.getElementById('menuToggle');
+const overlay = document.getElementById('mobileOverlay');
+const close = document.getElementById('menuClose');
+toggle.addEventListener('click', () => overlay.classList.add('open'));
+close.addEventListener('click', () => overlay.classList.remove('open'));
+overlay.addEventListener('click', e => { if (e.target === overlay) overlay.classList.remove('open'); });
+document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', () => overlay.classList.remove('open')));
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+        e.preventDefault();
+        const t = document.querySelector(this.getAttribute('href'));
+        if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+});
+
+// ============ V2 production UX improvements ============
+document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+// Persist and restore language. Query string wins over saved preference.
+const urlLang = new URLSearchParams(location.search).get('lang');
+const savedLang = localStorage.getItem('frigonais-lang');
+const initialLang = translations[urlLang] ? urlLang : (translations[savedLang] ? savedLang : 'en');
+if (initialLang !== 'en') setLanguage(initialLang);
+const originalSetLanguage = setLanguage;
+setLanguage = function(lang) {
+    originalSetLanguage(lang);
+    localStorage.setItem('frigonais-lang', lang);
+    const u = new URL(location.href);
+    u.searchParams.set('lang', lang);
+    history.replaceState({}, '', u);
+};
+
+// Accessible mobile menu state.
+function setMobileMenu(open) {
+    overlay.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    overlay.setAttribute('aria-hidden', String(!open));
+    document.body.style.overflow = open ? 'hidden' : '';
+}
+toggle.onclick = () => setMobileMenu(true);
+close.onclick = () => setMobileMenu(false);
+overlay.addEventListener('click', e => { if (e.target === overlay) setMobileMenu(false); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { setMobileMenu(false); closeProductModal(); } });
+
+// Product information modal. Facts are limited to claims already present on this page.
+const productData = [
+  {key:'p1_name', descKey:'p1_desc', facts:[['Processing','Cold / IQF'],['Fruit range','Cherry, raspberry, strawberry, blackberry, blueberry'],['Positioning','B2B ingredient'],['Next step','Technical specs on request']]},
+  {key:'p2_name', descKey:'p2_desc', facts:[['Processing','Hot processing'],['Applications','Bakery, dairy, retail'],['Format','Industrial fruit jams & spreads'],['Next step','Technical specs on request']]},
+  {key:'p3_name', descKey:'p3_desc', facts:[['Applications','Beverage, dairy, confectionery'],['Formats','Single-fruit & blended'],['Positioning','B2B ingredient'],['Next step','Technical specs on request']]},
+  {key:'p4_name', descKey:'p4_desc', facts:[['Property','Heat resistant'],['Application','Bakery'],['Designed to retain','Shape, color & flavor'],['Next step','Technical specs on request']]},
+  {key:'p5_name', descKey:'p5_desc', facts:[['Application','Yogurt & dairy'],['Customizable','Brix & viscosity'],['Format','Fruit preparation'],['Next step','Technical specs on request']]},
+  {key:'p6_name', descKey:'p6_desc', facts:[['Applications','Pastries, croissants, doughnuts, confectionery'],['Customizable','Recipe, texture & taste'],['Format','Fruit filling'],['Next step','Technical specs on request']]}
+];
+const modal = document.getElementById('productModal');
+const modalTitle = document.getElementById('modalTitle');
+const modalDescription = document.getElementById('modalDescription');
+const modalFacts = document.getElementById('modalFacts');
+let activeProduct = '';
+function openProductModal(i) {
+    const d = productData[i]; if (!d) return;
+    const t = translations[currentLang] || translations.en;
+    activeProduct = t[d.key] || translations.en[d.key];
+    modalTitle.textContent = activeProduct;
+    modalDescription.textContent = t[d.descKey] || translations.en[d.descKey];
+    modalFacts.innerHTML = d.facts.map(([k,v]) => `<div class="spec-chip"><b>${k}</b><span>${v}</span></div>`).join('');
+    modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden';
+    document.getElementById('modalClose').focus();
+}
+function closeProductModal() { if (!modal) return; modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); if (!overlay.classList.contains('open')) document.body.style.overflow=''; }
+document.querySelectorAll('.spec-request').forEach((btn,i) => { btn.addEventListener('click', e => { e.preventDefault(); openProductModal(i); }); });
+document.getElementById('modalClose').onclick = closeProductModal;
+document.getElementById('modalDismiss').onclick = closeProductModal;
+modal.addEventListener('click', e => { if (e.target === modal) closeProductModal(); });
+document.getElementById('modalQuote').onclick = () => {
+    const select = document.getElementById('productSelect');
+    [...select.options].forEach(o => { if (o.textContent.trim() === activeProduct.trim()) select.value = o.value; });
+    closeProductModal(); document.getElementById('contact').scrollIntoView({behavior:'smooth'});
+};
+
+// Contact form: Vercel-compatible /api/contact endpoint. Graceful fallback if backend is not configured.
+const contactForm = document.getElementById('contactForm');
+const formStatus = document.getElementById('formStatus');
+contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!contactForm.reportValidity()) return;
+    const button = contactForm.querySelector('.submit-btn');
+    const original = button.innerHTML;
+    button.disabled = true; button.classList.add('opacity-60','cursor-not-allowed');
+    button.textContent = 'Sending…'; formStatus.hidden = true;
+    const payload = Object.fromEntries(new FormData(contactForm).entries());
+    try {
+        const res = await fetch('/api/contact', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload)});
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(data.error || 'Unable to send inquiry');
+        formStatus.className = 'form-status text-sm rounded-lg px-4 py-3 mt-5 bg-brand-50 border border-brand-100 text-brand-800';
+        formStatus.textContent = translations[currentLang]?.form_sent || 'Inquiry sent. Thank you.'; formStatus.hidden = false; contactForm.reset();
+    } catch (err) {
+        formStatus.className = 'form-status text-sm rounded-lg px-4 py-3 mt-5 bg-accent-50 border border-accent-100 text-accent-800';
+        formStatus.innerHTML = `The web form is not configured yet. Please email <a class="font-semibold underline" href="mailto:frigonais@gmail.com">frigonais@gmail.com</a>.`; formStatus.hidden = false;
+    } finally {
+        button.disabled = false; button.classList.remove('opacity-60','cursor-not-allowed'); button.innerHTML = original;
+    }
+});
+</script>
+</body>
+</html>

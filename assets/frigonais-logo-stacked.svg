@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 520" role="img" aria-labelledby="title desc">
+  <title id="title">Frigonais</title><desc id="desc">Frigonais stacked fruit logo</desc>
+  <defs><path id="arc" d="M65 415 Q210 500 355 415"/></defs>
+  <circle cx="210" cy="300" r="74" fill="#D64A4F"/>
+  <ellipse cx="184" cy="270" rx="14" ry="27" fill="#F28A8E" transform="rotate(28 184 270)" opacity=".75"/>
+  <path d="M218 298c34-22 45-63 23-102-18-32-36-51-33-91 2-26 19-52 47-60 29-9 58 8 66 34 7 24-10 41-31 37-23-4-45-33-57-60" fill="none" stroke="#87A45E" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M218 297c18 20 26 49 17 75-9 27-39 40-65 34-25-6-46-27-47-54-1-29 21-52 47-58" fill="none" stroke="#87A45E" stroke-width="16" stroke-linecap="round"/>
+  <text fill="#6F8C49" font-family="Georgia, 'Times New Roman', serif" font-size="53" font-weight="600" letter-spacing="1.5"><textPath href="#arc" startOffset="50%" text-anchor="middle">Frigonais</textPath></text>
+</svg>
