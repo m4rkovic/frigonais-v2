@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.frigonais.com/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.frigonais.com/en/" />
+    <xhtml:link rel="alternate" hreflang="sr" href="https://www.frigonais.com/sr/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.frigonais.com/zh/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.frigonais.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.frigonais.com/" />
+  </url>
+  <url>
+    <loc>https://www.frigonais.com/products.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.frigonais.com/en/products" />
+    <xhtml:link rel="alternate" hreflang="sr" href="https://www.frigonais.com/sr/products" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.frigonais.com/zh/products" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.frigonais.com/ar/products" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.frigonais.com/products.html" />
+  </url>
+</urlset>
