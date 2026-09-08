@@ -19,10 +19,13 @@
     tag_cherry: 'Sour cherry',
     tag_diced_apple: 'Frozen diced apple',
     tag_cut_plum: 'Machine-cut plum',
+    value_fruit_list: 'Sour cherry, frozen diced apple, machine-cut plum',
     p3_desc: 'Fruit purées with a focus on plum and prune (dried plum), with sour cherry purée also available for industrial food applications.',
     tag_puree_plum: 'Plum purée',
     tag_puree_prune: 'Prune purée',
-    tag_puree_sour_cherry: 'Sour cherry purée'
+    tag_puree_sour_cherry: 'Sour cherry purée',
+    fact_formats: 'Purée range',
+    value_single_blended: 'Plum, prune & sour cherry'
   });
 
   Object.assign(translations.sr || {}, {
@@ -40,10 +43,13 @@
     tag_cherry: 'Višnja',
     tag_diced_apple: 'Smrznuta jabuka na kockice',
     tag_cut_plum: 'Mašinski sečena šljiva',
+    value_fruit_list: 'Višnja, smrznuta jabuka na kockice, mašinski sečena šljiva',
     p3_desc: 'Voćni pirei sa posebnim fokusom na pire od šljive i suve šljive, uz dostupnost pirea od višnje za industrijske primene.',
     tag_puree_plum: 'Pire od šljive',
     tag_puree_prune: 'Pire od suve šljive',
-    tag_puree_sour_cherry: 'Pire od višnje'
+    tag_puree_sour_cherry: 'Pire od višnje',
+    fact_formats: 'Vrste pirea',
+    value_single_blended: 'Šljiva, suva šljiva i višnja'
   });
 
   Object.assign(translations.zh || {}, {
@@ -61,10 +67,13 @@
     tag_cherry: '酸樱桃',
     tag_diced_apple: '冷冻苹果丁',
     tag_cut_plum: '机械切割李子',
+    value_fruit_list: '酸樱桃、冷冻苹果丁、机械切割李子',
     p3_desc: '果泥产品重点包括李子果泥和西梅（干李子）果泥，同时提供适用于工业食品生产的酸樱桃果泥。',
     tag_puree_plum: '李子果泥',
     tag_puree_prune: '西梅果泥',
-    tag_puree_sour_cherry: '酸樱桃果泥'
+    tag_puree_sour_cherry: '酸樱桃果泥',
+    fact_formats: '果泥种类',
+    value_single_blended: '李子、西梅和酸樱桃'
   });
 
   Object.assign(translations.ar || {}, {
@@ -82,9 +91,12 @@
     tag_cherry: 'كرز حامض',
     tag_diced_apple: 'مكعبات تفاح مجمدة',
     tag_cut_plum: 'برقوق مقطع آلياً',
+    value_fruit_list: 'كرز حامض، مكعبات تفاح مجمدة، برقوق مقطع آلياً',
     p3_desc: 'يركز نطاق الهريس على هريس البرقوق والقراصيا (البرقوق المجفف)، مع توفر هريس الكرز الحامض للتطبيقات الصناعية.',
     tag_puree_plum: 'هريس البرقوق',
     tag_puree_prune: 'هريس القراصيا',
-    tag_puree_sour_cherry: 'هريس الكرز الحامض'
+    tag_puree_sour_cherry: 'هريس الكرز الحامض',
+    fact_formats: 'أنواع الهريس',
+    value_single_blended: 'البرقوق والقراصيا والكرز الحامض'
   });
 })();
