@@ -30,7 +30,7 @@ const assertions = [
   [(home.match(/data-product-id=/g) || []).length === 3, 'landing must expose exactly three product modal triggers'],
   [(products.match(/index\.html\?product=/g) || []).length === 6, 'catalogue must preserve product selection in RFQ links'],
   [home.includes('frigonaiskursumlija@gmail.com'), 'Kuršumlija production contact must be present'],
-  [originalCopy.includes('Frigonais was founded in 1996') && originalCopy.includes('6,000') && originalCopy.includes('HACCP'), 'original company profile content source must be present'],
+  [originalCopy.includes('Frigonais was founded in 1996') && originalCopy.includes('Kuršumlija') && originalCopy.includes('HACCP') && originalCopy.includes('France, Italy, Germany, Austria and Greece'), 'original company profile content source must be present'],
   [originalCopy.includes("p1_name: 'Smrznuto voće'") && originalCopy.includes("p3_name: 'Voćni pire'"), 'Serbian original production-program copy must be present'],
   [home.includes('for="name"') && home.includes('id="name"'), 'form labels must be associated with controls'],
   [site.includes('setMobileMenu(false)'), 'shared mobile menu close handling must exist'],
