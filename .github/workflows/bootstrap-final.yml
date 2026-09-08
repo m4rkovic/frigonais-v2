@@ -1,0 +1,33 @@
+name: Bootstrap Final Hardening
+
+on:
+  push:
+    branches:
+      - fix/final-hardening
+
+permissions:
+  contents: write
+
+jobs:
+  bootstrap:
+    if: ${{ !contains(github.event.head_commit.message, '[bootstrap-done]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Reconstruct final package
+        shell: bash
+        run: |
+          cat bootstrap/p* | base64 -d > /tmp/frigonais.zip
+          unzip -o /tmp/frigonais.zip -d .
+          rm -rf bootstrap
+          rm -f .github/workflows/bootstrap-final.yml
+      - name: Commit final package
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "feat: production hardening [bootstrap-done]"
+          git push
