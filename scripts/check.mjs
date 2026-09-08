@@ -2,13 +2,14 @@ import { readFile, access } from 'node:fs/promises';
 
 const required = [
   'index.html', 'products.html', 'assets/site.css', 'assets/site.js', 'assets/i18n.js',
-  'assets/lang-routing.js', 'assets/frigonais-logo-green.svg', 'assets/og-image.png',
+  'assets/lang-routing.js', 'assets/original-site-content.js', 'assets/frigonais-logo-green.svg', 'assets/og-image.png',
   'netlify/functions/contact.js', 'robots.txt', 'sitemap.xml', 'netlify.toml', '_redirects', '_headers',
-  'scripts/prepare-deploy.mjs', 'scripts/seo-build.mjs', 'scripts/check-seo.mjs'
+  'scripts/apply-original-content.mjs', 'scripts/patch-seo-original.mjs', 'scripts/prepare-deploy.mjs',
+  'scripts/seo-build.mjs', 'scripts/check-seo.mjs'
 ];
 for (const file of required) await access(file);
 
-const [home, products, site, css, netlify, redirects, headers, contact, deployScript, seoScript] = await Promise.all([
+const [home, products, site, css, netlify, redirects, headers, contact, originalCopy, seoPatch, deployScript, seoScript] = await Promise.all([
   readFile('index.html', 'utf8'),
   readFile('products.html', 'utf8'),
   readFile('assets/site.js', 'utf8'),
@@ -17,6 +18,8 @@ const [home, products, site, css, netlify, redirects, headers, contact, deploySc
   readFile('_redirects', 'utf8'),
   readFile('_headers', 'utf8'),
   readFile('netlify/functions/contact.js', 'utf8'),
+  readFile('assets/original-site-content.js', 'utf8'),
+  readFile('scripts/patch-seo-original.mjs', 'utf8'),
   readFile('scripts/prepare-deploy.mjs', 'utf8'),
   readFile('scripts/seo-build.mjs', 'utf8')
 ]);
@@ -27,7 +30,8 @@ const assertions = [
   [(home.match(/data-product-id=/g) || []).length === 3, 'landing must expose exactly three product modal triggers'],
   [(products.match(/index\.html\?product=/g) || []).length === 6, 'catalogue must preserve product selection in RFQ links'],
   [home.includes('frigonaiskursumlija@gmail.com'), 'Kuršumlija production contact must be present'],
-  [home.includes('30 Years of'), '30-year company copy must be present'],
+  [originalCopy.includes('Frigonais was founded in 1996') && originalCopy.includes('6,000') && originalCopy.includes('HACCP'), 'original company profile content source must be present'],
+  [originalCopy.includes("p1_name: 'Smrznuto voće'") && originalCopy.includes("p3_name: 'Voćni pire'"), 'Serbian original production-program copy must be present'],
   [home.includes('for="name"') && home.includes('id="name"'), 'form labels must be associated with controls'],
   [site.includes('setMobileMenu(false)'), 'shared mobile menu close handling must exist'],
   [site.includes("fetch('/api/contact'"), 'frontend contact form must use the stable /api/contact endpoint'],
@@ -36,6 +40,7 @@ const assertions = [
   [netlify.includes('functions = "netlify/functions"'), 'Netlify functions directory must be configured'],
   [deployScript.includes("../build/assets/"), 'build script must copy static assets into the publish directory'],
   [deployScript.includes("'_redirects'") && deployScript.includes("'_headers'"), 'build script must copy Netlify routing/header files'],
+  [seoPatch.includes('Family-owned Serbian fruit processor founded in 1996') && seoPatch.includes("areaServed: ['France', 'Italy', 'Germany', 'Austria', 'Greece']"), 'SEO source patch must use original profile facts'],
   [seoScript.includes('localized pages') || seoScript.includes('SEO build complete'), 'SEO build generator must be configured'],
   [redirects.includes('/api/contact /.netlify/functions/contact 200'), 'Netlify must rewrite /api/contact to the contact function'],
   [redirects.includes('/en / 301!') && redirects.includes('/en/products /products.html 301!'), 'duplicate English routes must redirect to canonical English URLs'],
