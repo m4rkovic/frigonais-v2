@@ -1,6 +1,6 @@
 {
   "name": "frigonais-v2",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "private": true,
   "description": "Frigonais B2B presentation website",
   "scripts": {
@@ -10,9 +10,10 @@
     "build:original": "node scripts/apply-original-content.mjs",
     "build:original-final": "node scripts/apply-original-final.mjs",
     "build:seo-source": "node scripts/patch-seo-original.mjs",
+    "build:range": "node scripts/apply-product-range-priority.mjs",
     "build:deploy": "node scripts/prepare-deploy.mjs",
     "build:seo": "node scripts/seo-build.mjs",
-    "build": "npm run build:config && npm run build:css && npm run build:copy && npm run build:original && npm run build:original-final && npm run build:seo-source && npm run build:deploy && npm run build:seo",
+    "build": "npm run build:config && npm run build:css && npm run build:copy && npm run build:original && npm run build:original-final && npm run build:seo-source && npm run build:range && npm run build:deploy && npm run build:seo",
     "check": "node scripts/check.mjs",
     "check:seo": "node scripts/check-seo.mjs"
   },
