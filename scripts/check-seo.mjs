@@ -13,9 +13,7 @@ const files = [
   'build/assets/tailwind.css',
   'build/assets/lang-routing.js',
   'build/assets/i18n.js',
-  'build/assets/copy-fixes.js',
-  'build/assets/copy-final.js',
-  'build/assets/product-focus.js'
+  'build/assets/original-site-content.js'
 ];
 
 for (const file of files) await access(file);
@@ -43,20 +41,31 @@ const assertions = [
   [srHome.includes('<html lang="sr"') && srHome.includes('href="https://www.frigonais.com/sr/"'), 'Serbian page must be localized and self-canonical'],
   [zhHome.includes('<html lang="zh-CN"') && zhHome.includes('href="https://www.frigonais.com/zh/"'), 'Chinese page must be localized and self-canonical'],
   [arHome.includes('<html lang="ar" dir="rtl"') && arHome.includes('href="https://www.frigonais.com/ar/"'), 'Arabic page must be RTL and self-canonical'],
-  [srHome.includes('Pouzdan B2B dobavljač voćnih sastojaka'), 'Serbian HTML must use proofread pre-rendered copy'],
-  [srHome.includes('30 godina') && srHome.includes('Ovo jedinstveno podneblje') && !srHome.includes('terroir'), 'Serbian company copy must be proofread and natural'],
-  [home.includes('Frozen Sour Cherry') && home.includes('Frozen Diced Apple') && home.includes('Machine-Cut Plum') && home.includes('Plum & Prune Purées'), 'homepage must lead with the priority frozen fruit and puree products'],
-  [!home.includes('data-i18n="core_thermostable"') && !srHome.includes('od IQF smrznutog voća do termostabilnih pekarskih punjenja'), 'homepage positioning must not lead with bakery fillings'],
-  [products.includes('sour cherry') && products.includes('Frozen diced apple') && products.includes('Machine-cut plum'), 'English frozen fruit card must prioritize sour cherry, diced apple and machine-cut plum'],
-  [srProducts.includes('smrznuta jabuka na kockice') && srProducts.includes('mašinski sečena šljiva') && srProducts.includes('U IQF programu posebno izdvajamo višnju i šljivu'), 'Serbian frozen fruit copy must prioritize sour cherry, diced apple and machine-cut plum'],
-  [srProducts.includes('pire od šljive i suve šljive') && srProducts.includes('pirea od višnje') && srProducts.includes('Pire od suve šljive'), 'Serbian puree copy must include plum, prune and sour cherry'],
-  [builtI18n.includes('FRIGONAIS_BUILD_COPY_FIXES') && builtI18n.includes('FRIGONAIS_BUILD_COPY_FINAL') && builtI18n.includes('FRIGONAIS_BUILD_PRODUCT_FOCUS'), 'runtime translations must include all production copy layers'],
-  [builtI18n.includes("value_fruit_list: 'Višnja, smrznuta jabuka na kockice, mašinski sečena šljiva'") && builtI18n.includes("value_single_blended: 'Šljiva, suva šljiva i višnja'"), 'product modals must reflect priority frozen fruit and puree range'],
-  [home.includes('frozen diced apple') && home.includes('machine-cut plum') && home.includes('plum and prune purées'), 'homepage metadata must reflect the priority product range'],
+
+  [home.includes('Family-owned fruit processor from Serbia') && home.includes('Fruit Processing') && home.includes('Since 1996'), 'English home must pre-render the original company positioning'],
+  [srHome.includes('Porodična kompanija za preradu voća iz Srbije') && srHome.includes('1996'), 'Serbian home must pre-render the original company positioning'],
+  [home.includes('6,000') && home.includes('2007') && home.includes('HACCP'), 'home must show original profile milestones'],
+  [srHome.includes('6,000') && srHome.includes('Francuske') && srHome.includes('Austrije') && srHome.includes('Grčke'), 'Serbian export section must use the original profile markets'],
+
+  [home.includes('Frozen Fruit') && home.includes('Jams &amp; Fruit Spreads') && home.includes('Fruit Purées'), 'homepage must lead with the original production-program product categories'],
+  [products.includes('Frozen Fruit') && products.includes('Thermostable Mass') && products.includes('Fruit Yogurt Ingredients') && products.includes('Fruit Fillings'), 'catalogue must retain the original six main product groups'],
+  [srProducts.includes('Smrznuto voće') && srProducts.includes('Termostabilna masa') && srProducts.includes('Sastojci za voćni jogurt') && srProducts.includes('Voćna punjenja'), 'Serbian catalogue must match the original production program'],
+  [srProducts.includes('višnju') && srProducts.includes('šljivu') && !srProducts.includes('Trešnja'), 'Serbian frozen-fruit copy must use višnja and šljiva'],
+
+  [home.includes('HACCP') && !home.includes('FSSC 22000') && !home.includes('SEDEX / SMETA') && !home.includes('Kosher certified'), 'production home must not present unsupported certification claims'],
+  [!home.includes('€5M') && !home.includes('15+ Countries') && !home.includes('120<span'), 'production home must not present unsupported commercial metrics'],
+  [!home.includes('North America') && !home.includes('Middle East'), 'original-profile export section must not add unsupported regions'],
+  [home.includes('France') && home.includes('Italy') && home.includes('Germany') && home.includes('Austria') && home.includes('Greece'), 'original-profile export countries must be present'],
+
+  [builtI18n.includes('FRIGONAIS_ORIGINAL_SITE_CONTENT'), 'runtime translations must include the original-site content layer'],
+  [builtI18n.includes("p1_name: 'Smrznuto voće'") && builtI18n.includes("p3_name: 'Voćni pire'") && builtI18n.includes("qual_desc: 'U profilu kompanije"), 'Serbian runtime copy must reflect the original company profile'],
+
+  [home.includes('Family-owned Serbian fruit processor founded in 1996') && !home.includes('IQF frozen fruit'), 'English SEO metadata must match the original profile and remove IQF positioning'],
+  [home.includes('"areaServed"') && home.includes('Austria') && !home.includes('North America'), 'structured data must use source-backed export markets'],
   [home.includes('"@type": "WebSite"') && home.includes('"@type": "Organization"'), 'home structured data must include WebSite and Organization'],
   [products.includes('"@type": "CollectionPage"') && products.includes('"@type": "BreadcrumbList"') && products.includes('"@type": "ItemList"'), 'products structured data must include collection, breadcrumbs and item list'],
-  [srProducts.includes('Među najvažnijim smrznutim proizvodima') && srProducts.includes('Voćni pirei sa posebnim fokusom'), 'Serbian structured/product content must use the prioritized product descriptions'],
   [home.includes('property="og:image:width"') && home.includes('name="twitter:image"'), 'social metadata must include image dimensions and Twitter image'],
+
   [sitemap.includes('https://www.frigonais.com/sr/') && sitemap.includes('https://www.frigonais.com/zh/products/') && sitemap.includes('https://www.frigonais.com/ar/products/'), 'sitemap must include canonical localized URLs'],
   [sitemap.includes('<lastmod>'), 'sitemap must include lastmod dates'],
   [!headers.includes('cdn.tailwindcss.com'), 'CSP must not allow obsolete Tailwind CDN'],
