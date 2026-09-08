@@ -1,17 +1,24 @@
 import { readFile, writeFile } from 'node:fs/promises';
 
-const marker = '/* FRIGONAIS_BUILD_COPY_FIXES */';
+const baseMarker = '/* FRIGONAIS_BUILD_COPY_FIXES */';
+const finalMarker = '/* FRIGONAIS_BUILD_COPY_FINAL */';
 const i18nUrl = new URL('../assets/i18n.js', import.meta.url);
 const copyFixesUrl = new URL('../assets/copy-fixes.js', import.meta.url);
+const copyFinalUrl = new URL('../assets/copy-final.js', import.meta.url);
 
-const [i18nSource, copyFixesSource] = await Promise.all([
-  readFile(i18nUrl, 'utf8'),
-  readFile(copyFixesUrl, 'utf8')
+let i18nSource = await readFile(i18nUrl, 'utf8');
+const [copyFixesSource, copyFinalSource] = await Promise.all([
+  readFile(copyFixesUrl, 'utf8'),
+  readFile(copyFinalUrl, 'utf8')
 ]);
 
-if (!i18nSource.includes(marker)) {
-  await writeFile(i18nUrl, `${i18nSource.trimEnd()}\n\n${marker}\n${copyFixesSource}\n`);
+if (!i18nSource.includes(baseMarker)) {
+  i18nSource = `${i18nSource.trimEnd()}\n\n${baseMarker}\n${copyFixesSource}\n`;
 }
+if (!i18nSource.includes(finalMarker)) {
+  i18nSource = `${i18nSource.trimEnd()}\n\n${finalMarker}\n${copyFinalSource}\n`;
+}
+await writeFile(i18nUrl, i18nSource);
 
 const pages = ['index.html', 'products.html'];
 const oldDescription = 'Individually Quick Frozen cherries, raspberries, strawberries, blackberries, and blueberries. Preserves peak freshness, nutrition, and natural flavor profile.';
