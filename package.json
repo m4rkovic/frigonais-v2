@@ -8,9 +8,10 @@
     "build:css": "tailwindcss -i ./src/input.css -o ./assets/tailwind.css --minify",
     "build:copy": "node scripts/apply-copy-fixes.mjs",
     "build:original": "node scripts/apply-original-content.mjs",
+    "build:seo-source": "node scripts/patch-seo-original.mjs",
     "build:deploy": "node scripts/prepare-deploy.mjs",
     "build:seo": "node scripts/seo-build.mjs",
-    "build": "npm run build:config && npm run build:css && npm run build:copy && npm run build:original && npm run build:deploy && npm run build:seo",
+    "build": "npm run build:config && npm run build:css && npm run build:copy && npm run build:original && npm run build:seo-source && npm run build:deploy && npm run build:seo",
     "check": "node scripts/check.mjs",
     "check:seo": "node scripts/check-seo.mjs"
   },
