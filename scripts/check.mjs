@@ -2,12 +2,13 @@ import { readFile, access } from 'node:fs/promises';
 
 const required = [
   'index.html', 'products.html', 'assets/site.css', 'assets/site.js', 'assets/i18n.js',
-  'assets/frigonais-logo-green.svg', 'assets/og-image.png', 'netlify/functions/contact.js',
-  'robots.txt', 'sitemap.xml', 'netlify.toml', '_redirects', '_headers', 'scripts/prepare-deploy.mjs'
+  'assets/lang-routing.js', 'assets/frigonais-logo-green.svg', 'assets/og-image.png',
+  'netlify/functions/contact.js', 'robots.txt', 'sitemap.xml', 'netlify.toml', '_redirects', '_headers',
+  'scripts/prepare-deploy.mjs', 'scripts/seo-build.mjs', 'scripts/check-seo.mjs'
 ];
 for (const file of required) await access(file);
 
-const [home, products, site, css, netlify, redirects, headers, contact, deployScript] = await Promise.all([
+const [home, products, site, css, netlify, redirects, headers, contact, deployScript, seoScript] = await Promise.all([
   readFile('index.html', 'utf8'),
   readFile('products.html', 'utf8'),
   readFile('assets/site.js', 'utf8'),
@@ -16,7 +17,8 @@ const [home, products, site, css, netlify, redirects, headers, contact, deploySc
   readFile('_redirects', 'utf8'),
   readFile('_headers', 'utf8'),
   readFile('netlify/functions/contact.js', 'utf8'),
-  readFile('scripts/prepare-deploy.mjs', 'utf8')
+  readFile('scripts/prepare-deploy.mjs', 'utf8'),
+  readFile('scripts/seo-build.mjs', 'utf8')
 ]);
 
 const assertions = [
@@ -34,10 +36,14 @@ const assertions = [
   [netlify.includes('functions = "netlify/functions"'), 'Netlify functions directory must be configured'],
   [deployScript.includes("../build/assets/"), 'build script must copy static assets into the publish directory'],
   [deployScript.includes("'_redirects'") && deployScript.includes("'_headers'"), 'build script must copy Netlify routing/header files'],
+  [seoScript.includes('localized pages') || seoScript.includes('SEO build complete'), 'SEO build generator must be configured'],
   [redirects.includes('/api/contact /.netlify/functions/contact 200'), 'Netlify must rewrite /api/contact to the contact function'],
-  [redirects.includes('/sr/products /products.html?lang=sr 200') && redirects.includes('/ar/products /products.html?lang=ar 200'), 'localized product routes must be configured for Netlify'],
+  [redirects.includes('/en / 301!') && redirects.includes('/en/products /products.html 301!'), 'duplicate English routes must redirect to canonical English URLs'],
+  [redirects.includes('/sr /sr/ 301!') && redirects.includes('/ar/products /ar/products/ 301!'), 'localized routes must normalize trailing slashes'],
+  [!redirects.includes('?lang=sr 200'), 'localized SEO routes must not depend on query-string rewrites'],
   [headers.includes('Content-Security-Policy:') && headers.includes('Cache-Control:'), 'Netlify security and asset headers must be present'],
-  [contact.includes('exports.handler'), 'contact endpoint must use the Netlify Functions handler format'],
+  [!headers.includes('cdn.tailwindcss.com'), 'production CSP must not allow obsolete Tailwind browser CDN'],
+  [contact.includes('exports.handler'), 'contact endpoint must use the current deployed Netlify handler format'],
   [css.includes('overflow-x: clip') && css.includes('.trust-strip'), 'mobile horizontal-overflow hardening must be present']
 ];
 
