@@ -1,16 +1,16 @@
 {
   "name": "frigonais-v2",
-  "version": "2.2.2",
+  "version": "2.3.0",
   "private": true,
   "description": "Frigonais B2B presentation website",
   "scripts": {
     "build:config": "node scripts/build-config.mjs",
     "build:css": "tailwindcss -i ./src/input.css -o ./assets/tailwind.css --minify",
     "build:copy": "node scripts/apply-copy-fixes.mjs",
-    "build:focus": "node scripts/apply-product-focus.mjs",
+    "build:original": "node scripts/apply-original-content.mjs",
     "build:deploy": "node scripts/prepare-deploy.mjs",
     "build:seo": "node scripts/seo-build.mjs",
-    "build": "npm run build:config && npm run build:css && npm run build:copy && npm run build:focus && npm run build:deploy && npm run build:seo",
+    "build": "npm run build:config && npm run build:css && npm run build:copy && npm run build:original && npm run build:deploy && npm run build:seo",
     "check": "node scripts/check.mjs",
     "check:seo": "node scripts/check-seo.mjs"
   },
