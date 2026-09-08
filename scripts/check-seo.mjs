@@ -14,7 +14,8 @@ const files = [
   'build/assets/lang-routing.js',
   'build/assets/i18n.js',
   'build/assets/copy-fixes.js',
-  'build/assets/copy-final.js'
+  'build/assets/copy-final.js',
+  'build/assets/product-focus.js'
 ];
 
 for (const file of files) await access(file);
@@ -44,12 +45,17 @@ const assertions = [
   [arHome.includes('<html lang="ar" dir="rtl"') && arHome.includes('href="https://www.frigonais.com/ar/"'), 'Arabic page must be RTL and self-canonical'],
   [srHome.includes('Pouzdan B2B dobavljač voćnih sastojaka'), 'Serbian HTML must use proofread pre-rendered copy'],
   [srHome.includes('30 godina') && srHome.includes('Ovo jedinstveno podneblje') && !srHome.includes('terroir'), 'Serbian company copy must be proofread and natural'],
-  [products.includes('sour cherries') && products.includes('plums') && products.includes('data-i18n="tag_plum">Plum'), 'English IQF copy must list sour cherries and plums'],
-  [srProducts.includes('višnje') && srProducts.includes('šljive') && srProducts.includes('data-i18n="tag_plum">Šljiva') && !srProducts.includes('trešnje') && !srProducts.includes('Trešnja'), 'Serbian IQF copy must list višnje and šljive, never trešnje'],
-  [builtI18n.includes('FRIGONAIS_BUILD_COPY_FIXES') && builtI18n.includes('FRIGONAIS_BUILD_COPY_FINAL') && builtI18n.includes("tag_cherry: 'Višnja'") && builtI18n.includes("tag_plum: 'Šljiva'") && builtI18n.includes("value_fruit_list: 'Višnja, malina, jagoda, kupina, borovnica, šljiva'"), 'runtime translations must include final proofread fruit corrections'],
+  [home.includes('Frozen Sour Cherry') && home.includes('Frozen Diced Apple') && home.includes('Machine-Cut Plum') && home.includes('Plum & Prune Purées'), 'homepage must lead with the priority frozen fruit and puree products'],
+  [!home.includes('data-i18n="core_thermostable"') && !srHome.includes('od IQF smrznutog voća do termostabilnih pekarskih punjenja'), 'homepage positioning must not lead with bakery fillings'],
+  [products.includes('sour cherry') && products.includes('Frozen diced apple') && products.includes('Machine-cut plum'), 'English frozen fruit card must prioritize sour cherry, diced apple and machine-cut plum'],
+  [srProducts.includes('smrznuta jabuka na kockice') && srProducts.includes('mašinski sečena šljiva') && srProducts.includes('U IQF programu posebno izdvajamo višnju i šljivu'), 'Serbian frozen fruit copy must prioritize sour cherry, diced apple and machine-cut plum'],
+  [srProducts.includes('pire od šljive i suve šljive') && srProducts.includes('pirea od višnje') && srProducts.includes('Pire od suve šljive'), 'Serbian puree copy must include plum, prune and sour cherry'],
+  [builtI18n.includes('FRIGONAIS_BUILD_COPY_FIXES') && builtI18n.includes('FRIGONAIS_BUILD_COPY_FINAL') && builtI18n.includes('FRIGONAIS_BUILD_PRODUCT_FOCUS'), 'runtime translations must include all production copy layers'],
+  [builtI18n.includes("value_fruit_list: 'Višnja, smrznuta jabuka na kockice, mašinski sečena šljiva'") && builtI18n.includes("value_single_blended: 'Šljiva, suva šljiva i višnja'"), 'product modals must reflect priority frozen fruit and puree range'],
+  [home.includes('frozen diced apple') && home.includes('machine-cut plum') && home.includes('plum and prune purées'), 'homepage metadata must reflect the priority product range'],
   [home.includes('"@type": "WebSite"') && home.includes('"@type": "Organization"'), 'home structured data must include WebSite and Organization'],
   [products.includes('"@type": "CollectionPage"') && products.includes('"@type": "BreadcrumbList"') && products.includes('"@type": "ItemList"'), 'products structured data must include collection, breadcrumbs and item list'],
-  [srProducts.includes('Pojedinačno brzo smrznute višnje') && srProducts.includes('IQF postupak'), 'Serbian structured/product content must use corrected IQF description'],
+  [srProducts.includes('Među najvažnijim smrznutim proizvodima') && srProducts.includes('Voćni pirei sa posebnim fokusom'), 'Serbian structured/product content must use the prioritized product descriptions'],
   [home.includes('property="og:image:width"') && home.includes('name="twitter:image"'), 'social metadata must include image dimensions and Twitter image'],
   [sitemap.includes('https://www.frigonais.com/sr/') && sitemap.includes('https://www.frigonais.com/zh/products/') && sitemap.includes('https://www.frigonais.com/ar/products/'), 'sitemap must include canonical localized URLs'],
   [sitemap.includes('<lastmod>'), 'sitemap must include lastmod dates'],
