@@ -1,0 +1,14 @@
+@import url('https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css');
+
+/* Frigonais design tokens missing from the generic Tailwind CDN build. */
+.bg-brand-50{background-color:#F0F7F1}.bg-brand-100{background-color:#D9ECD9}.bg-brand-200{background-color:#B4D9B4}.bg-brand-400{background-color:#5FAD5F}.bg-brand-500{background-color:#3D8B3D}.bg-brand-600{background-color:#2D6E2D}.bg-brand-700{background-color:#1F5C1F}.bg-brand-800{background-color:#174A17}.bg-brand-900{background-color:#0F3A0F}.bg-brand-950{background-color:#082508}
+.text-brand-200{color:#B4D9B4}.text-brand-300{color:#8FC38F}.text-brand-400{color:#5FAD5F}.text-brand-500{color:#3D8B3D}.text-brand-600{color:#2D6E2D}.text-brand-700{color:#1F5C1F}.text-brand-800{color:#174A17}.text-brand-900{color:#0F3A0F}
+.border-brand-50{border-color:#F0F7F1}.border-brand-100{border-color:#D9ECD9}.border-brand-200{border-color:#B4D9B4}.border-brand-600{border-color:#2D6E2D}
+.bg-accent-50{background-color:#FFF5F5}.bg-accent-100{background-color:#FFE3E3}.bg-accent-200{background-color:#FFC4C4}.bg-accent-400{background-color:#E8505B}.bg-accent-500{background-color:#D63A45}.bg-accent-600{background-color:#B82D37}.bg-accent-700{background-color:#9A1F28}.bg-accent-800{background-color:#7D1A22}
+.text-accent-500{color:#D63A45}.text-accent-600{color:#B82D37}.text-accent-800{color:#7D1A22}.border-accent-100{border-color:#FFE3E3}
+.bg-neutral-50{background-color:#FAFAF9}.bg-neutral-100{background-color:#F5F4F2}.bg-neutral-150{background-color:#EDECE9}.bg-neutral-200{background-color:#E2E0DC}.bg-neutral-800{background-color:#33312C}.bg-neutral-900{background-color:#1A1917}
+.text-neutral-300{color:#C9C6BF}.text-neutral-400{color:#A8A39A}.text-neutral-500{color:#8A8479}.text-neutral-600{color:#6B665C}.text-neutral-700{color:#4D4943}.text-neutral-800{color:#33312C}.text-neutral-900{color:#1A1917}
+.border-neutral-100{border-color:#F5F4F2}.border-neutral-150{border-color:#EDECE9}.border-neutral-200{border-color:#E2E0DC}.border-neutral-800{border-color:#33312C}
+.font-serif{font-family:'Instrument Serif',Georgia,serif}.font-sans{font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.h-\[76px\]{height:76px}.min-h-\[620px\]{min-height:620px}.z-\[70\]{z-index:70}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-\[3\.5rem\]{font-size:3.5rem}.leading-\[1\.1\]{line-height:1.1}.max-h-\[90vh\]{max-height:90vh}
+@media (min-width:1024px){.lg\:min-h-\[700px\]{min-height:700px}.lg\:text-\[3\.5rem\]{font-size:3.5rem}}
