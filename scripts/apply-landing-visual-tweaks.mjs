@@ -23,7 +23,7 @@ if (!home.includes(hiddenMarker)) {
   }
 }
 
-// Red is a secondary Frigonais accent only. Keep green as the dominant brand colour.
+// Landing page only: red is a secondary Frigonais accent, while green remains dominant.
 home = home
   .replace(
     '<a href="#contact" class="border border-white/30 text-white px-6 py-3 rounded-lg text-sm font-semibold hover:bg-white/10 transition-all" data-i18n="hero_cta2">',
