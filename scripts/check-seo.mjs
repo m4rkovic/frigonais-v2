@@ -12,13 +12,14 @@ const files = [
   'build/sitemap.xml',
   'build/assets/tailwind.css',
   'build/assets/site.css',
+  'build/assets/site.js',
   'build/assets/lang-routing.js',
   'build/assets/i18n.js',
   'build/assets/legacy-source-truth.js'
 ];
 for (const file of files) await access(file);
 
-const [home, products, srHome, srProducts, zhHome, zhProducts, arHome, arProducts, sitemap, headers, redirects, builtI18n, builtCss] = await Promise.all([
+const [home, products, srHome, srProducts, zhHome, zhProducts, arHome, arProducts, sitemap, headers, redirects, builtI18n, builtCss, builtSite, builtRouting] = await Promise.all([
   readFile('build/index.html', 'utf8'),
   readFile('build/products.html', 'utf8'),
   readFile('build/sr/index.html', 'utf8'),
@@ -31,7 +32,9 @@ const [home, products, srHome, srProducts, zhHome, zhProducts, arHome, arProduct
   readFile('build/_headers', 'utf8'),
   readFile('build/_redirects', 'utf8'),
   readFile('build/assets/i18n.js', 'utf8'),
-  readFile('build/assets/site.css', 'utf8')
+  readFile('build/assets/site.css', 'utf8'),
+  readFile('build/assets/site.js', 'utf8'),
+  readFile('build/assets/lang-routing.js', 'utf8')
 ]);
 
 const visibleHome = home.replace(/<!--[\s\S]*?-->/g, '');
@@ -54,7 +57,7 @@ const assertions = [
   [!home.includes('6,000') && !home.includes('2007') && !home.includes('France') && !home.includes('North America') && !home.includes('Middle East'), 'facts not present in the old repo must not remain in production copy'],
 
   [products.includes('Frozen Fruit') && products.includes('Fruit Purée') && products.includes('Jam') && products.includes('Thermostable Masses') && products.includes('Fruit-Yogurt Preparations') && products.includes('Fruit Fillings'), 'English catalogue must follow the old production program'],
-  [srProducts.includes('Smrznuto voće') && srProducts.includes('Voćni pire') && srProducts.includes('Pekmez') && srProducts.includes('Termostabilne mase') && srProducts.includes('Mase za voćni jogurt') && srProducts.includes('Voćni nadevi'), 'Serbian catalogue must use the old production terminology'],
+  [srProducts.includes('smrznuto voće') && srProducts.includes('Voćni pire') && srProducts.includes('Pekmez') && srProducts.includes('Termostabilne mase') && srProducts.includes('Mase za voćni jogurt') && srProducts.includes('Voćni nadevi'), 'Serbian catalogue must use the old production terminology'],
   [srProducts.includes('višnja, šljiva, malina, kupina, borovnica i kajsija'), 'Serbian frozen-fruit range must contain the approved six fruits'],
   [srProducts.includes('višnja, šljiva, suva šljiva, šipurak, kupina, malina i kajsija'), 'Serbian purée range must contain the approved seven fruits'],
   [products.includes('sour cherry, plum, raspberry, blackberry, blueberry and apricot'), 'English frozen-fruit range must contain the approved six fruits'],
@@ -63,7 +66,7 @@ const assertions = [
   [arProducts.includes('الكرز الحامض، البرقوق، توت العليق، التوت الأسود، التوت الأزرق والمشمش') && arProducts.includes('الكرز الحامض، البرقوق، القراصيا، ثمر الورد، التوت الأسود، توت العليق والمشمش'), 'Arabic product ranges must accurately preserve the approved fruits'],
   [products.includes('<!-- Prod 2 -->\n            <div style="order:3"') && products.includes('<!-- Prod 3 -->\n            <div style="order:2"'), 'fruit purée must render as the second product category'],
   [!(/\bpremium\b/i.test(home)) && !(/\bpremium\b/i.test(products)) && !(/\bpremium\b/i.test(srHome)) && !(/\bpremium\b/i.test(srProducts)), 'production copy should avoid premium marketing language'],
-  [!(/\bIQF\b/.test(home)) && !(/\bIQF\b/.test(products)) && !(/\bIQF\b/.test(srHome)) && !(/\bIQF\b/.test(srProducts)), 'IQF must not appear as visible production copy'],
+  [products.includes('data-i18n="p1_name">IQF Frozen Fruit</') && srProducts.includes('data-i18n="p1_name">IQF smrznuto voće</') && zhProducts.includes('data-i18n="p1_name">IQF 速冻水果</') && arProducts.includes('data-i18n="p1_name">فاكهة مجمدة IQF</'), 'IQF must be restored specifically on the frozen-fruit product in all languages'],
 
   [home.includes('<!-- INDUSTRIES SECTION HIDDEN FOR NOW') && !visibleHome.includes('data-i18n="ind_label"'), 'Industries We Serve must stay preserved in source but hidden on the landing page'],
   [home.includes('bg-accent-500 border border-accent-400') && home.includes('text-accent-600') && home.includes('bg-accent-500 w-12 mb-6 sep-line'), 'landing page must include restrained red accent elements'],
@@ -71,6 +74,10 @@ const assertions = [
 
   [builtI18n.includes('FRIGONAIS_LEGACY_SOURCE_TRUTH') && builtI18n.includes('FRIGONAIS_PRODUCT_RANGE_PRIORITY'), 'runtime translations must include final source-of-truth and product-range layers'],
   [builtI18n.includes("value_fruit_list: 'Višnja, šljiva, malina, kupina, borovnica, kajsija'") && builtI18n.includes("value_single_blended: 'Višnja, šljiva, suva šljiva, šipurak, kupina, malina, kajsija'"), 'product modal values must use the approved ranges'],
+
+  [builtRouting.includes('window.frigonaisNavigateLanguage = navigateLanguage') && builtRouting.includes("params.delete('lang')") && !builtRouting.includes("addEventListener('click'"), 'language switching must have one canonical router without a competing click listener'],
+  [builtSite.includes("typeof window.frigonaisNavigateLanguage === 'function'") && !builtSite.includes("url.searchParams.set('lang', lang)"), 'site.js must delegate language URL changes to the canonical router'],
+  [headers.includes('Cache-Control: public, max-age=0, must-revalidate'), 'mutable static assets must revalidate so stale language JavaScript cannot survive a deploy'],
 
   [home.includes('more than 120 employees and annual exports of around €5 million'), 'English SEO metadata must preserve old-site company facts'],
   [srHome.includes('više od 120 zaposlenih i godišnji izvoz od oko pet miliona evra'), 'Serbian SEO metadata must preserve old-site company facts'],

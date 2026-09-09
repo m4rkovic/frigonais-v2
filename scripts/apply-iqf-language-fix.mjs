@@ -9,7 +9,7 @@ let legacy = await readFile(legacyUrl, 'utf8');
 let site = await readFile(siteUrl, 'utf8');
 let headers = await readFile(headersUrl, 'utf8');
 
-// IQF belongs only to the frozen-fruit product label.
+// IQF belongs only to the frozen-fruit product naming, not the wider company copy.
 legacy = legacy
   .replaceAll("core_iqf: 'Frozen Fruit'", "core_iqf: 'IQF Frozen Fruit'")
   .replaceAll("p1_name: 'Frozen Fruit'", "p1_name: 'IQF Frozen Fruit'")
@@ -20,14 +20,60 @@ legacy = legacy
   .replaceAll("core_iqf: 'فاكهة مجمدة'", "core_iqf: 'فاكهة مجمدة IQF'")
   .replaceAll("p1_name: 'فاكهة مجمدة'", "p1_name: 'فاكهة مجمدة IQF'");
 
-// The canonical language router is the only code that changes language URLs.
+// site.js no longer mutates ?lang= itself. The canonical router owns language URL changes.
 const oldSetLanguage = `  function setLanguage(lang, persist = true) {\n    applyLanguage(lang);\n    if (persist) {\n      try { localStorage.setItem('frigonais-lang', lang); } catch (_) {}\n      const url = new URL(location.href);\n      url.searchParams.set('lang', lang);\n      history.replaceState({}, '', url);\n    }\n  }`;
+
 const newSetLanguage = `  function setLanguage(lang, persist = true) {\n    if (persist && typeof window.frigonaisNavigateLanguage === 'function') {\n      window.frigonaisNavigateLanguage(lang);\n      return;\n    }\n    applyLanguage(lang);\n    if (persist) {\n      try { localStorage.setItem('frigonais-lang', lang); } catch (_) {}\n    }\n  }`;
+
 if (site.includes(oldSetLanguage)) site = site.replace(oldSetLanguage, newSetLanguage);
 
-const routing = `(() => {\n  'use strict';\n\n  const supported = new Set(['en', 'sr', 'zh', 'ar']);\n  window.FRIGONAIS_LANG_ROUTER_ACTIVE = true;\n\n  function isProductsPage() {\n    return document.body?.dataset.page === 'products' || /\\/products(?:\\/|\\.html)?$/.test(location.pathname);\n  }\n\n  function canonicalPath(lang) {\n    const products = isProductsPage();\n    if (lang === 'en') return products ? '/products.html' : '/';\n    return products ? \\`/\\${lang}/products/\\` : \\`/\\${lang}/\\`;\n  }\n\n  function queryAndHashWithoutLanguage() {\n    const params = new URLSearchParams(location.search);\n    params.delete('lang');\n    const query = params.toString();\n    return \\`\\${query ? \\`?\\${query}\\` : ''}\\${location.hash || ''}\\`;\n  }\n\n  function navigateLanguage(lang) {\n    if (!supported.has(lang)) return;\n    try { localStorage.setItem('frigonais-lang', lang); } catch (_) {}\n    const target = \\`\\${canonicalPath(lang)}\\${queryAndHashWithoutLanguage()}\\`;\n    const current = \\`\\${location.pathname}\\${location.search}\\${location.hash}\\`;\n    if (current !== target) location.assign(target);\n  }\n\n  window.frigonaisNavigateLanguage = navigateLanguage;\n\n  // Clean up legacy ?lang= URLs and route them to the canonical localized path.\n  const requested = new URLSearchParams(location.search).get('lang');\n  if (supported.has(requested)) {\n    const target = \\`\\${canonicalPath(requested)}\\${queryAndHashWithoutLanguage()}\\`;\n    const current = \\`\\${location.pathname}\\${location.search}\\${location.hash}\\`;\n    if (current !== target) location.replace(target);\n  }\n})();\n`;
+// One router, one click flow. No capture-phase listener fighting site.js anymore.
+const routing = [
+  "(() => {",
+  "  'use strict';",
+  "",
+  "  const supported = new Set(['en', 'sr', 'zh', 'ar']);",
+  "  window.FRIGONAIS_LANG_ROUTER_ACTIVE = true;",
+  "",
+  "  function isProductsPage() {",
+  "    return document.body?.dataset.page === 'products' || /\\/products(?:\\/|\\.html)?$/.test(location.pathname);",
+  "  }",
+  "",
+  "  function canonicalPath(lang) {",
+  "    const products = isProductsPage();",
+  "    if (lang === 'en') return products ? '/products.html' : '/';",
+  "    return products ? '/' + lang + '/products/' : '/' + lang + '/';",
+  "  }",
+  "",
+  "  function queryAndHashWithoutLanguage() {",
+  "    const params = new URLSearchParams(location.search);",
+  "    params.delete('lang');",
+  "    const query = params.toString();",
+  "    return (query ? '?' + query : '') + (location.hash || '');",
+  "  }",
+  "",
+  "  function navigateLanguage(lang) {",
+  "    if (!supported.has(lang)) return;",
+  "    try { localStorage.setItem('frigonais-lang', lang); } catch (_) {}",
+  "    const target = canonicalPath(lang) + queryAndHashWithoutLanguage();",
+  "    const current = location.pathname + location.search + location.hash;",
+  "    if (current !== target) location.assign(target);",
+  "  }",
+  "",
+  "  window.frigonaisNavigateLanguage = navigateLanguage;",
+  "",
+  "  // Migrate old ?lang= links to the real localized static URL.",
+  "  const requested = new URLSearchParams(location.search).get('lang');",
+  "  if (supported.has(requested)) {",
+  "    const target = canonicalPath(requested) + queryAndHashWithoutLanguage();",
+  "    const current = location.pathname + location.search + location.hash;",
+  "    if (current !== target) location.replace(target);",
+  "  }",
+  "})();",
+  ""
+].join('\n');
 
-// Mutable JS/CSS use stable URLs, so force revalidation to avoid stale language code after deploys.
+// Assets currently use stable filenames. Revalidate them so an old JS bundle cannot fight a new HTML deploy.
 headers = headers.replace(
   'Cache-Control: public, max-age=86400, stale-while-revalidate=604800',
   'Cache-Control: public, max-age=0, must-revalidate'
