@@ -11,13 +11,14 @@ const files = [
   'build/ar/products/index.html',
   'build/sitemap.xml',
   'build/assets/tailwind.css',
+  'build/assets/site.css',
   'build/assets/lang-routing.js',
   'build/assets/i18n.js',
   'build/assets/legacy-source-truth.js'
 ];
 for (const file of files) await access(file);
 
-const [home, products, srHome, srProducts, zhHome, zhProducts, arHome, arProducts, sitemap, headers, redirects, builtI18n] = await Promise.all([
+const [home, products, srHome, srProducts, zhHome, zhProducts, arHome, arProducts, sitemap, headers, redirects, builtI18n, builtCss] = await Promise.all([
   readFile('build/index.html', 'utf8'),
   readFile('build/products.html', 'utf8'),
   readFile('build/sr/index.html', 'utf8'),
@@ -29,8 +30,11 @@ const [home, products, srHome, srProducts, zhHome, zhProducts, arHome, arProduct
   readFile('build/sitemap.xml', 'utf8'),
   readFile('build/_headers', 'utf8'),
   readFile('build/_redirects', 'utf8'),
-  readFile('build/assets/i18n.js', 'utf8')
+  readFile('build/assets/i18n.js', 'utf8'),
+  readFile('build/assets/site.css', 'utf8')
 ]);
+
+const visibleHome = home.replace(/<!--[\s\S]*?-->/g, '');
 
 const assertions = [
   [!home.includes('cdn.tailwindcss.com'), 'production home must not load Tailwind browser CDN'],
@@ -60,6 +64,10 @@ const assertions = [
   [products.includes('<!-- Prod 2 -->\n            <div style="order:3"') && products.includes('<!-- Prod 3 -->\n            <div style="order:2"'), 'fruit purée must render as the second product category'],
   [!(/\bpremium\b/i.test(home)) && !(/\bpremium\b/i.test(products)) && !(/\bpremium\b/i.test(srHome)) && !(/\bpremium\b/i.test(srProducts)), 'production copy should avoid premium marketing language'],
   [!(/\bIQF\b/.test(home)) && !(/\bIQF\b/.test(products)) && !(/\bIQF\b/.test(srHome)) && !(/\bIQF\b/.test(srProducts)), 'IQF must not appear as visible production copy'],
+
+  [home.includes('<!-- INDUSTRIES SECTION HIDDEN FOR NOW') && !visibleHome.includes('data-i18n="ind_label"'), 'Industries We Serve must stay preserved in source but hidden on the landing page'],
+  [home.includes('bg-accent-500 border border-accent-400') && home.includes('text-accent-600') && home.includes('bg-accent-500 w-12 mb-6 sep-line'), 'landing page must include restrained red accent elements'],
+  [builtCss.includes('FRIGONAIS_LANDING_RED_ACCENTS') && builtCss.includes('#B82D37'), 'landing stylesheet must include restrained red trust-strip accents'],
 
   [builtI18n.includes('FRIGONAIS_LEGACY_SOURCE_TRUTH') && builtI18n.includes('FRIGONAIS_PRODUCT_RANGE_PRIORITY'), 'runtime translations must include final source-of-truth and product-range layers'],
   [builtI18n.includes("value_fruit_list: 'Višnja, šljiva, malina, kupina, borovnica, kajsija'") && builtI18n.includes("value_single_blended: 'Višnja, šljiva, suva šljiva, šipurak, kupina, malina, kajsija'"), 'product modal values must use the approved ranges'],
