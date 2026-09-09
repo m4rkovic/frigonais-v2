@@ -8,10 +8,14 @@ let home = await readFile(homeUrl, 'utf8');
 let css = await readFile(cssUrl, 'utf8');
 let js = await readFile(jsUrl, 'utf8');
 
-home = home.replace(
-  '<a href="#contact" class="hidden lg:inline-flex btn-primary text-white px-5 py-2.5 rounded-lg text-sm font-semibold" data-i18n="nav_quote">',
-  '<a href="#contact" id="stickyQuoteCta" class="hidden lg:inline-flex sticky-quote-cta text-white rounded-lg text-sm font-semibold" data-i18n="nav_quote">'
-);
+const originalDesktopCta = '<a href="#contact" class="hidden lg:inline-flex btn-primary text-white px-5 py-2.5 rounded-lg text-sm font-semibold" data-i18n="nav_quote">';
+const stickyDesktopCta = '<a href="#contact" id="stickyQuoteCta" aria-hidden="true" tabindex="-1" class="hidden lg:inline-flex sticky-quote-cta text-white rounded-lg text-sm font-semibold" data-i18n="nav_quote">';
+
+if (home.includes(originalDesktopCta)) {
+  home = home.replace(originalDesktopCta, stickyDesktopCta);
+} else if (!home.includes('id="stickyQuoteCta"')) {
+  throw new Error('Desktop quote CTA not found; sticky CTA transform was not applied.');
+}
 
 const cssMarker = '/* FRIGONAIS_STICKY_QUOTE_CTA */';
 if (!css.includes(cssMarker)) {
@@ -22,7 +26,11 @@ const oldStickyBlock = `  // Sticky nav subtle elevation.\n  const navbar = byId
 
 const newStickyBlock = `  // Sticky nav elevation + delayed desktop CTA after the hero has been passed.\n  const navbar = byId('navbar') || document.querySelector('nav.sticky');\n  const stickyQuoteCta = byId('stickyQuoteCta');\n  const heroSection = document.querySelector('[aria-labelledby="hero-title"]');\n  if (navbar) {\n    const onScroll = () => {\n      navbar.classList.toggle('nav-scrolled', window.scrollY > 12);\n      if (stickyQuoteCta && heroSection && document.body.dataset.page === 'home') {\n        const heroPassed = heroSection.getBoundingClientRect().bottom <= navbar.offsetHeight + 8;\n        stickyQuoteCta.classList.toggle('is-visible', heroPassed);\n        stickyQuoteCta.setAttribute('aria-hidden', String(!heroPassed));\n        stickyQuoteCta.tabIndex = heroPassed ? 0 : -1;\n      }\n    };\n    onScroll();\n    window.addEventListener('scroll', onScroll, { passive: true });\n    window.addEventListener('resize', onScroll, { passive: true });\n  }`;
 
-if (js.includes(oldStickyBlock)) js = js.replace(oldStickyBlock, newStickyBlock);
+if (js.includes(oldStickyBlock)) {
+  js = js.replace(oldStickyBlock, newStickyBlock);
+} else if (!js.includes("const stickyQuoteCta = byId('stickyQuoteCta')")) {
+  throw new Error('Sticky navigation block not found; CTA visibility behavior was not applied.');
+}
 
 await Promise.all([
   writeFile(homeUrl, home),
