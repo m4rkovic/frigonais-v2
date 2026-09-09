@@ -6,11 +6,13 @@ const routingUrl = new URL('../assets/lang-routing.js', import.meta.url);
 const homeUrl = new URL('../index.html', import.meta.url);
 const productsUrl = new URL('../products.html', import.meta.url);
 const redirectsUrl = new URL('../_redirects', import.meta.url);
+const checkSeoUrl = new URL('../scripts/check-seo.mjs', import.meta.url);
 
-let [site, home, products] = await Promise.all([
+let [site, home, products, checkSeo] = await Promise.all([
   readFile(siteUrl, 'utf8'),
   readFile(homeUrl, 'utf8'),
-  readFile(productsUrl, 'utf8')
+  readFile(productsUrl, 'utf8'),
+  readFile(checkSeoUrl, 'utf8')
 ]);
 
 // Language is purely local UI state. Never read or write language in the URL.
@@ -34,17 +36,22 @@ site = site.replace(
   applyLanguage(initialLang);`
 );
 
-if (!site.includes('FRIGONAIS_SINGLE_LANGUAGE_OWNER')) {
-  site = site.replace("  window.setLanguage = setLanguage;", "  window.setLanguage = setLanguage;\n  // FRIGONAIS_SINGLE_LANGUAGE_OWNER: site.js only. Legacy check marker: typeof window.frigonaisNavigateLanguage === 'function'");
-}
+// If the previous build step already removed URL-language initialization, keep the clean localStorage-only flow.
+site = site.replace(
+  /const urlLang = new URLSearchParams\(location\.search\)\.get\('lang'\);\n  let savedLang = null;\n  try \{ savedLang = localStorage\.getItem\('frigonais-lang'\); \} catch \(_\) \{\}\n  const initialLang = supportedLangs\.includes\(urlLang\) \? urlLang : \(languageFromPath\(\) \|\| \(supportedLangs\.includes\(savedLang\) \? savedLang : 'en'\)\);\n  applyLanguage\(initialLang\);/,
+`let savedLang = null;
+  try { savedLang = localStorage.getItem('frigonais-lang'); } catch (_) {}
+  const initialLang = supportedLangs.includes(savedLang) ? savedLang : 'en';
+  applyLanguage(initialLang);`
+);
 
-// Escape should close an open language picker, but must not trigger any language change.
+// Escape should only close UI, never trigger a language transition.
 site = site.replace(
   "if (event.key === 'Escape') {\n      setMobileMenu(false);\n      closeProductModal();\n    }",
   "if (event.key === 'Escape') {\n      document.querySelectorAll('.lang-picker').forEach((p) => p.classList.remove('open'));\n      setMobileMenu(false);\n      closeProductModal();\n    }"
 );
 
-const noRouter = `(() => {\n  'use strict';\n  // Intentionally inert. Language switching is owned exclusively by site.js.\n  // Legacy regression markers only: window.frigonaisNavigateLanguage = navigateLanguage; params.delete('lang');\n})();\n`;
+const noRouter = `(() => {\n  'use strict';\n  // Intentionally inert. Language switching is owned exclusively by site.js.\n})();\n`;
 
 function versionScripts(html) {
   return html
@@ -75,12 +82,32 @@ const redirects = `/api/contact /.netlify/functions/contact 200
 /ar/products/ /products.html 301!
 `;
 
+checkSeo = checkSeo
+  .replace(
+    `[builtRouting.includes("history.replaceState") && builtRouting.includes("localStorage.setItem('frigonais-lang', requested)") && !builtRouting.includes('location.assign') && !builtRouting.includes('location.replace'), 'language selection must stay on the current page URL'],`,
+    `[!home.includes('/assets/lang-routing.js') && !products.includes('/assets/lang-routing.js') && builtRouting.includes('Intentionally inert'), 'language router must be inert and not loaded by production pages'],`
+  )
+  .replace(
+    `[builtSite.includes("localStorage.setItem('frigonais-lang', lang)") && !builtSite.includes('frigonaisNavigateLanguage') && !builtSite.includes("url.searchParams.set('lang', lang)"), 'site.js must switch language in place without changing routes'],`,
+    `[builtSite.includes("localStorage.setItem('frigonais-lang', lang)") && !builtSite.includes("url.searchParams.set('lang', lang)") && !builtSite.includes('location.assign(') && !builtSite.includes('location.replace('), 'site.js must be the only in-place language owner'],`
+  )
+  .replace(
+    `[redirects.includes('/sr/ /?lang=sr 302!') && redirects.includes('/zh/ /?lang=zh 302!') && redirects.includes('/ar/ /?lang=ar 302!') && redirects.includes('/sr/products/ /products.html?lang=sr 302!'), 'legacy localized routes must safely return to the real page URLs']`,
+    `[redirects.includes('/sr/ / 301!') && redirects.includes('/zh/ / 301!') && redirects.includes('/ar/ / 301!') && redirects.includes('/sr/products/ /products.html 301!'), 'legacy localized routes must permanently return to the real page URLs']`
+  );
+
+checkSeo = checkSeo.replace(
+  `  [headers.includes('Cache-Control: public, max-age=0, must-revalidate'), 'mutable static assets must revalidate so stale language JavaScript cannot survive a deploy'],`,
+  `  [headers.includes('Cache-Control: public, max-age=0, must-revalidate'), 'mutable static assets must revalidate so stale language JavaScript cannot survive a deploy'],\n  [home.includes('site.js?v=${VERSION}') && home.includes('i18n.js?v=${VERSION}') && products.includes('site.js?v=${VERSION}'), 'language assets must be cache-busted after the flicker fix'],`
+);
+
 await Promise.all([
   writeFile(siteUrl, site),
   writeFile(routingUrl, noRouter),
   writeFile(homeUrl, home),
   writeFile(productsUrl, products),
-  writeFile(redirectsUrl, redirects)
+  writeFile(redirectsUrl, redirects),
+  writeFile(checkSeoUrl, checkSeo)
 ]);
 
 console.log('Hard-reset language switching to a single in-place UI state with cache-busted scripts.');
