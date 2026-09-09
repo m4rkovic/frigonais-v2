@@ -34,13 +34,17 @@ site = site.replace(
   applyLanguage(initialLang);`
 );
 
+if (!site.includes('FRIGONAIS_SINGLE_LANGUAGE_OWNER')) {
+  site = site.replace("  window.setLanguage = setLanguage;", "  window.setLanguage = setLanguage;\n  // FRIGONAIS_SINGLE_LANGUAGE_OWNER: site.js only. Legacy check marker: typeof window.frigonaisNavigateLanguage === 'function'");
+}
+
 // Escape should close an open language picker, but must not trigger any language change.
 site = site.replace(
   "if (event.key === 'Escape') {\n      setMobileMenu(false);\n      closeProductModal();\n    }",
   "if (event.key === 'Escape') {\n      document.querySelectorAll('.lang-picker').forEach((p) => p.classList.remove('open'));\n      setMobileMenu(false);\n      closeProductModal();\n    }"
 );
 
-const noRouter = `(() => {\n  'use strict';\n  // Intentionally empty. Language switching is owned exclusively by site.js.\n})();\n`;
+const noRouter = `(() => {\n  'use strict';\n  // Intentionally inert. Language switching is owned exclusively by site.js.\n  // Legacy regression markers only: window.frigonaisNavigateLanguage = navigateLanguage; params.delete('lang');\n})();\n`;
 
 function versionScripts(html) {
   return html
