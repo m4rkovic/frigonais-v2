@@ -6,12 +6,12 @@ const required = [
   'assets/legacy-source-truth.js', 'assets/frigonais-logo-green.svg', 'assets/og-image.png',
   'netlify/functions/contact.js', 'robots.txt', 'sitemap.xml', 'netlify.toml', '_redirects', '_headers',
   'scripts/apply-original-content.mjs', 'scripts/apply-product-range-priority.mjs',
-  'scripts/apply-legacy-source-truth.mjs', 'scripts/patch-seo-original.mjs',
+  'scripts/apply-legacy-source-truth.mjs', 'scripts/apply-landing-visual-tweaks.mjs', 'scripts/patch-seo-original.mjs',
   'scripts/prepare-deploy.mjs', 'scripts/seo-build.mjs', 'scripts/check-seo.mjs'
 ];
 for (const file of required) await access(file);
 
-const [home, products, site, css, netlify, redirects, headers, contact, rangeCopy, legacyCopy, rangeScript, legacyScript, deployScript, seoScript] = await Promise.all([
+const [home, products, site, css, netlify, redirects, headers, contact, rangeCopy, legacyCopy, rangeScript, legacyScript, visualScript, deployScript, seoScript] = await Promise.all([
   readFile('index.html', 'utf8'),
   readFile('products.html', 'utf8'),
   readFile('assets/site.js', 'utf8'),
@@ -24,6 +24,7 @@ const [home, products, site, css, netlify, redirects, headers, contact, rangeCop
   readFile('assets/legacy-source-truth.js', 'utf8'),
   readFile('scripts/apply-product-range-priority.mjs', 'utf8'),
   readFile('scripts/apply-legacy-source-truth.mjs', 'utf8'),
+  readFile('scripts/apply-landing-visual-tweaks.mjs', 'utf8'),
   readFile('scripts/prepare-deploy.mjs', 'utf8'),
   readFile('scripts/seo-build.mjs', 'utf8')
 ]);
@@ -42,6 +43,7 @@ const assertions = [
   [rangeCopy.includes("p3_desc: 'Asortiman voćnih pirea: višnja, šljiva, suva šljiva, šipurak, kupina, malina i kajsija.'"), 'Serbian purée range must match the approved list'],
   [rangeScript.includes('orderMap = { 1: 1, 2: 3, 3: 2'), 'fruit purées must be visually prioritized as the second product category'],
   [legacyScript.includes('FRIGONAIS_LEGACY_SOURCE_TRUTH') && legacyScript.includes("areaServed: 'Worldwide'"), 'final source-of-truth build layer must run and constrain SEO facts'],
+  [visualScript.includes('INDUSTRIES SECTION HIDDEN FOR NOW') && visualScript.includes('bg-accent-500') && visualScript.includes('FRIGONAIS_LANDING_RED_ACCENTS'), 'landing visual layer must hide Industries and add restrained red accents'],
   [home.includes('for="name"') && home.includes('id="name"'), 'form labels must be associated with controls'],
   [site.includes('setMobileMenu(false)'), 'shared mobile menu close handling must exist'],
   [site.includes("fetch('/api/contact'"), 'frontend contact form must use the stable /api/contact endpoint'],
